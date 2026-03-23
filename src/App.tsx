@@ -52,14 +52,16 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-3">
-            <img 
-              src="https://i.ibb.co/TB6FK5sw/Untitled-design-5.jpg" 
-              alt="Vibrant Web Solutions Logo" 
-              className="h-10 w-auto" 
-              referrerPolicy="no-referrer"
-            />
+            <a href="https://ibb.co/NdKk6RRm" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
+                alt="Vibrant Web Solutions Logo" 
+                className="h-10 w-auto rounded-md" 
+                referrerPolicy="no-referrer"
+              />
+            </a>
             <span className="text-2xl font-display font-bold tracking-tighter text-white hidden sm:block">
-             Vibrant Web Solution <span className="text-neon-green">.</span>
+             Vibrant Web Solutions <span className="text-neon-green">.</span>
             </span>
           </div>
           
@@ -173,17 +175,30 @@ const Hero = () => {
           className="mt-20 relative"
         >
           <div className="relative mx-auto max-w-5xl">
-            <img 
-              src="https://i.ibb.co/MkQKdCMJ/mockup-descktop.png" 
-              alt="Website Mockup" 
-              className="rounded-2xl shadow-2xl border border-white/10"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute -bottom-10 -right-4 md:-right-10 w-32 md:w-48">
+            {/* Desktop & Tablet View: Both Images */}
+            <div className="hidden sm:block relative">
               <img 
-                src="https://i.ibb.co/dsJ8G6mK/1000416693.png" 
-                alt="Mobile Mockup" 
-                className="rounded-3xl shadow-2xl border-4 border-zinc-900"
+                src="https://i.ibb.co/tpZL7L1h/mockup-descktop.png" 
+                alt="Desktop Website Mockup" 
+                className="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute -bottom-10 -right-4 md:-right-10 w-32 md:w-48">
+                <img 
+                  src="https://i.ibb.co/b51pp2N8/1000416693.png" 
+                  alt="Mobile Mockup" 
+                  className="rounded-3xl shadow-2xl border-4 border-zinc-900"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* Mobile View: Only Mobile Image */}
+            <div className="sm:hidden flex justify-center">
+              <img 
+                src="https://i.ibb.co/b51pp2N8/1000416693.png" 
+                alt="Mobile Website Mockup" 
+                className="w-64 h-auto rounded-[2.5rem] shadow-2xl border-8 border-zinc-900"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -420,12 +435,13 @@ const WhyChooseUs = () => {
 
 const Portfolio = () => {
   const projects = [
-    { img: "https://i.ibb.co/gFwH0hNk/Chat-GPT-Image-Mar-19-2026-06-20-12-PM.png", title: "Cleaning service" },
-    { img: "https://i.ibb.co/PszFZcYg/Gemini-Generated-Image-23g2ir23g2ir23g2.png", title: "Plumbing service" },
-    { img: "https://i.ibb.co/MxJKwW11/Gemini-Generated-Image-8i0bv08i0bv08i0b.png", title: "Car wash" },
-    { img: "https://i.ibb.co/Lh8kpzDF/Opera-Snapshot-2026-03-19-173306-www-prestigepoolscare-co-za.png", title: "Swimming pool service" },
-    { img: "https://i.ibb.co/d4By0kxD/Gemini-Generated-Image-m4mj90m4mj90m4mj.png", title: "Garden service " },
-    { img: "https://i.ibb.co/Tp34Sk1/Gemini-Generated-Image-wx6rtowx6rtowx6r.png", title: "Electrical service" }
+    { img: "https://i.ibb.co/rfTz8tTh/Opera-Snapshot-2026-03-19-173306-www-prestigepoolscare-co-za.png", title: "Prestige Pools Care" },
+    { img: "https://i.ibb.co/20YDHT6w/Gemini-Generated-Image-wx6rtowx6rtowx6r.png", title: "Electrical Services" },
+    { img: "https://i.ibb.co/XxRTJSbb/Gemini-Generated-Image-m4mj90m4mj90m4mj.png", title: "Garden Maintenance" },
+    { img: "https://i.ibb.co/svP4T60f/Gemini-Generated-Image-hpcca0hpcca0hpcc.png", title: "Construction & Renovation" },
+    { img: "https://i.ibb.co/LX53BXGs/Gemini-Generated-Image-23g2ir23g2ir23g2.png", title: "Plumbing Solutions" },
+    { img: "https://i.ibb.co/qMZX9zYR/Gemini-Generated-Image-8i0bv08i0bv08i0b.png", title: "Professional Car Wash" },
+    { img: "https://i.ibb.co/1t4mcCgK/Chat-GPT-Image-Mar-19-2026-06-20-12-PM.png", title: "Cleaning Services" }
   ];
 
   return (
@@ -433,7 +449,7 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Our Work</h2>
-          <p className="text-zinc-400">A glimpse at some of the websites we've built recently.</p>
+          <p className="text-zinc-400">A glimpse at some of the businesses we can help grow at vibrant web solutions.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -520,9 +536,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <span className="text-2xl font-display font-bold tracking-tighter text-white mb-6 block">
-              Vibrant Web Solutions <span className="text-neon-green">.</span>
-            </span>
+            <div className="flex items-center gap-3 mb-6">
+              <img 
+                src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
+                alt="Vibrant Web Solutions Logo" 
+                className="h-10 w-auto rounded-md" 
+                referrerPolicy="no-referrer"
+              />
+              <span className="text-2xl font-display font-bold tracking-tighter text-white block">
+                Vibrant Web Solutions <span className="text-neon-green">.</span>
+              </span>
+            </div>
             <p className="text-zinc-400 max-w-sm mb-8 leading-relaxed">
               Empowering South African businesses with fast, affordable, and high-quality web design solutions. Built with ❤️ in South Africa.
             </p>
