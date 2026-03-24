@@ -18,7 +18,11 @@ import {
   Smartphone, 
   Globe, 
   Search, 
-  Clock 
+  Clock,
+  User,
+  Mail,
+  Phone,
+  Building
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -45,6 +49,7 @@ const Navbar = () => {
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -52,7 +57,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-3">
-            <a href="https://ibb.co/NdKk6RRm" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.vibrantws.co.za" target="_blank" rel="noopener noreferrer">
               <img 
                 src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
                 alt="Vibrant Web Solutions Logo" 
@@ -485,7 +490,7 @@ const FAQ = () => {
     { q: "Do I own my website?", a: "Yes, 100%. Once the final payment is made, you own the website and all its assets." },
     { q: "What is the monthly R300 for?", a: "This covers high-speed local hosting, security updates, daily backups, and dedicated technical support." },
     { q: "Can I update the site myself?", a: "Absolutely! We build on user-friendly platforms and provide basic training so you can make simple updates." },
-    { q: "Do you offer email addresses?", a: "Yes, all our hosting packages include professional business email addresses (e.g., info@yourbusiness.co.za)." }
+    { q: "Do you offer email addresses?", a: "Yes, all our hosting packages include professional business email addresses (e.g., info@vibrantws.co.za)." }
   ];
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -530,23 +535,169 @@ const FAQ = () => {
   );
 };
 
+const LeadForm = () => {
+  return (
+    <section id="contact" className="py-24 bg-zinc-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tighter">
+              Let's Build Your <span className="text-neon-green underline decoration-neon-green/30 underline-offset-8">Digital Future</span>
+            </h2>
+            <p className="text-zinc-400 text-lg mb-10 leading-relaxed max-w-lg">
+              Ready to take your business to the next level? Fill out the form and we'll get back to you within 24 hours with a custom strategy.
+            </p>
+            
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 text-zinc-300">
+                <div className="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/5">
+                  <Smartphone className="text-neon-green w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Call or WhatsApp</p>
+                  <p className="font-bold">+27 64 519 2556</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-zinc-300">
+                <div className="w-12 h-12 bg-zinc-900 rounded-2xl flex items-center justify-center border border-white/5">
+                  <Mail className="text-neon-green w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Email Us</p>
+                  <p className="font-bold">info@vibrantws.co.za</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-zinc-900 p-8 md:p-10 rounded-[2.5rem] border border-white/5 shadow-2xl"
+          >
+            <form 
+              method="post" 
+              action="https://systeme.io/embedded/39250656/subscription"
+              className="space-y-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="first_name" className="text-sm font-bold text-zinc-400 ml-1">Full Name *</label>
+                  <div className="relative">
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+                    <input 
+                      required
+                      type="text"
+                      id="first_name"
+                      name="first_name"
+                      placeholder="John Doe"
+                      className="w-full bg-zinc-950 border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-neon-green focus:ring-1 focus:ring-neon-green outline-none transition-all text-white placeholder:text-zinc-700"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-bold text-zinc-400 ml-1">Email Address *</label>
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+                    <input 
+                      required
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="you@example.com"
+                      className="w-full bg-zinc-950 border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-neon-green focus:ring-1 focus:ring-neon-green outline-none transition-all text-white placeholder:text-zinc-700"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="phone_number" className="text-sm font-bold text-zinc-400 ml-1">Phone Number *</label>
+                  <div className="relative">
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+                    <input 
+                      required
+                      type="tel"
+                      id="phone_number"
+                      name="phone_number"
+                      placeholder="+27 64 519 2556"
+                      className="w-full bg-zinc-950 border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-neon-green focus:ring-1 focus:ring-neon-green outline-none transition-all text-white placeholder:text-zinc-700"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="company_name" className="text-sm font-bold text-zinc-400 ml-1">Business Name</label>
+                  <div className="relative">
+                    <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+                    <input 
+                      type="text"
+                      id="company_name"
+                      name="company_name"
+                      placeholder="Your Company Ltd"
+                      className="w-full bg-zinc-950 border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-neon-green focus:ring-1 focus:ring-neon-green outline-none transition-all text-white placeholder:text-zinc-700"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-bold text-zinc-400 ml-1">Message / Website Needs</label>
+                <textarea 
+                  id="message"
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us about your project..."
+                  className="w-full bg-zinc-950 border border-white/10 rounded-2xl py-4 px-4 focus:border-neon-green focus:ring-1 focus:ring-neon-green outline-none transition-all text-white placeholder:text-zinc-700 resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit"
+                className="w-full bg-neon-green text-black font-black py-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 text-lg"
+              >
+                Send Message
+                <ArrowRight className="w-5 h-5" />
+              </button>
+
+              <div className="pt-4 text-center">
+                <p className="text-zinc-500 text-sm mb-3 uppercase tracking-widest font-bold">Or chat with us directly</p>
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white hover:text-neon-green transition-colors font-bold"
+                >
+                  <WhatsAppIcon size={20} className="text-[#25D366]" />
+                  +27 64 519 2556
+                </a>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="bg-zinc-950 pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+            <a href="https://www.vibrantws.co.za" className="flex items-center gap-3 mb-6 group">
               <img 
                 src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
                 alt="Vibrant Web Solutions Logo" 
-                className="h-10 w-auto rounded-md" 
+                className="h-10 w-auto rounded-md group-hover:opacity-80 transition-opacity" 
                 referrerPolicy="no-referrer"
               />
-              <span className="text-2xl font-display font-bold tracking-tighter text-white block">
+              <span className="text-2xl font-display font-bold tracking-tighter text-white block group-hover:text-neon-green transition-colors">
                 Vibrant Web Solutions <span className="text-neon-green">.</span>
               </span>
-            </div>
+            </a>
             <p className="text-zinc-400 max-w-sm mb-8 leading-relaxed">
               Empowering South African businesses with fast, affordable, and high-quality web design solutions. Built with ❤️ in South Africa.
             </p>
@@ -572,7 +723,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Globe size={18} className="text-neon-green" />
-                Info@vibrantws.co.za
+                info@vibrantws.co.za
               </li>
             </ul>
           </div>
@@ -663,6 +814,7 @@ export default function App() {
       <WhyChooseUs />
       <Portfolio />
       <FAQ />
+      <LeadForm />
       <CTA />
       <Footer />
       <FloatingWhatsApp />
