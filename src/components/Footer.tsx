@@ -58,7 +58,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Globe size={18} className="text-neon-green" />
-                ocksbradley706@gmail.com
+                info@vibrantws.co.za
               </li>
             </ul>
           </div>

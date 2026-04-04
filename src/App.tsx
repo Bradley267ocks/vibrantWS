@@ -29,6 +29,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import ThankYouPage from './ThankYouPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import AIChatAssistant from './components/AIChatAssistant';
 
 const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
 
@@ -478,7 +479,7 @@ const LeadForm = () => {
                 </div>
                 <div>
                   <p className="text-xs text-zinc-500 uppercase font-bold tracking-widest">Email Us</p>
-                  <p className="font-bold">ocksbradley706@gmail.com</p>
+                  <p className="font-bold">info@vibrantws.co.za</p>
                 </div>
               </div>
             </div>
@@ -490,6 +491,9 @@ const LeadForm = () => {
             viewport={{ once: true }}
             className="bg-zinc-900 p-8 md:p-10 rounded-[2.5rem] border border-white/5 shadow-2xl"
           >
+            <p className="text-white font-bold text-lg mb-8 leading-tight">
+              Tell us about your business — we’ll show you exactly how to get more customers online.
+            </p>
             <form 
               method="post" 
               action="https://systeme.io/embedded/39250656/subscription"
@@ -664,6 +668,7 @@ export default function App() {
             <CTA />
             <Footer />
             <FloatingWhatsApp />
+            <AIChatAssistant />
           </div>
         } />
         <Route path="/thank-you" element={<ThankYouPage />} />
