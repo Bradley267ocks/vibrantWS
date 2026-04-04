@@ -29,7 +29,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import ThankYouPage from './ThankYouPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import AIChatAssistant from './components/AIChatAssistant';
 
 const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
 
@@ -668,7 +667,6 @@ export default function App() {
             <CTA />
             <Footer />
             <FloatingWhatsApp />
-            <AIChatAssistant />
           </div>
         } />
         <Route path="/thank-you" element={<ThankYouPage />} />

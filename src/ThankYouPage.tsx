@@ -15,7 +15,6 @@ import {
 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import AIChatAssistant from './components/AIChatAssistant';
 
 const WHATSAPP_BASE_URL = "https://wa.me/27645192556";
 
@@ -204,7 +203,6 @@ const ThankYouPage = () => {
       </section>
 
       <Footer />
-      <AIChatAssistant />
     </div>
   );
 };
