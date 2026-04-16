@@ -1,5 +1,6 @@
 import React from 'react';
 import { Smartphone, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
 
@@ -18,22 +19,22 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-950 pt-24 pb-12 border-t border-white/5">
+    <footer className="bg-dark-secondary pt-24 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <a href="https://www.vibrantws.co.za" className="flex items-center gap-3 mb-6 group">
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
               <img 
                 src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
                 alt="Vibrant Web Solutions Logo" 
                 className="h-10 w-auto rounded-md group-hover:opacity-80 transition-opacity" 
                 referrerPolicy="no-referrer"
               />
-              <span className="text-2xl font-display font-bold tracking-tighter text-white block group-hover:text-neon-green transition-colors">
+              <span className="text-2xl font-display font-bold tracking-tighter text-white block group-hover:text-electric-blue transition-colors">
                 Vibrant Web Solutions <span className="text-neon-green">.</span>
               </span>
-            </a>
-            <p className="text-zinc-400 max-w-sm mb-8 leading-relaxed">
+            </Link>
+            <p className="text-text-secondary max-w-sm mb-8 leading-relaxed">
               Empowering South African businesses with fast, affordable, and high-quality web design solutions. Built with ❤️ in South Africa.
             </p>
             <div className="flex gap-4">
@@ -41,7 +42,7 @@ const Footer = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-neon-green text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+                className="bg-electric-blue text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform"
               >
                 <WhatsAppIcon size={20} />
                 Chat on WhatsApp Now
@@ -50,35 +51,31 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Contact Us</h4>
-            <ul className="space-y-4 text-zinc-400">
-              <li className="flex items-center gap-3">
-                <Smartphone size={18} className="text-neon-green" />
-                064 519 2556
-              </li>
-              <li className="flex items-center gap-3">
-                <Globe size={18} className="text-neon-green" />
-                info@vibrantws.co.za
-              </li>
+            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Solutions</h4>
+            <ul className="space-y-4 text-text-secondary">
+              <li><Link to="/get-my-website" className="hover:text-electric-blue transition-colors">Get My Website</Link></li>
+              <li><Link to="/get-more-customers" className="hover:text-electric-blue transition-colors">Get More Customers</Link></li>
+              <li><Link to="/get-started" className="hover:text-electric-blue transition-colors">Get Started</Link></li>
+              <li><Link to="/whatsapp-contact" className="hover:text-electric-blue transition-colors">WhatsApp Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Quick Links</h4>
-            <ul className="space-y-4 text-zinc-400">
-              <li><a href="/#services" className="hover:text-neon-green transition-colors">Services</a></li>
-              <li><a href="/#pricing" className="hover:text-neon-green transition-colors">Pricing</a></li>
-              <li><a href="/#portfolio" className="hover:text-neon-green transition-colors">Portfolio</a></li>
-              <li><a href="#" className="hover:text-neon-green transition-colors">Privacy Policy</a></li>
+            <ul className="space-y-4 text-text-secondary">
+              <li><a href="/#services" className="hover:text-electric-blue transition-colors">Services</a></li>
+              <li><a href="/#pricing" className="hover:text-electric-blue transition-colors">Pricing</a></li>
+              <li><Link to="/blog" className="hover:text-electric-blue transition-colors">Blog</Link></li>
+              <li><a href="#" className="hover:text-electric-blue transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-zinc-500 text-sm">
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-text-secondary text-sm">
             © 2026 Vibrant Web Solutions. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-zinc-500 text-sm">
+          <div className="flex items-center gap-2 text-text-secondary text-sm">
             <span>Built with ❤️ in South Africa</span>
           </div>
         </div>
