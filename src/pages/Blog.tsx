@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Calendar, User, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -9,6 +10,10 @@ import { blogPosts } from '../blog/posts';
 const Blog = () => {
   return (
     <div className="min-h-screen bg-dark-primary text-white font-sans selection:bg-electric-blue selection:text-black">
+      <Helmet>
+        <title>Business Growth Blog | Web Design & SEO Tips South Africa</title>
+        <meta name="description" content="Expert insights on website design, local SEO, Google Maps ranking, and digital marketing strategies for South African entrepreneurs." />
+      </Helmet>
       <Navbar />
       
       <main className="pt-32 pb-24">

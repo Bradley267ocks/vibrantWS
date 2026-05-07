@@ -51,22 +51,23 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Solutions</h4>
-            <ul className="space-y-4 text-text-secondary">
-              <li><Link to="/get-my-website" className="hover:text-electric-blue transition-colors">Get My Website</Link></li>
-              <li><Link to="/get-more-customers" className="hover:text-electric-blue transition-colors">Get More Customers</Link></li>
-              <li><Link to="/get-started" className="hover:text-electric-blue transition-colors">Get Started</Link></li>
-              <li><Link to="/whatsapp-contact" className="hover:text-electric-blue transition-colors">WhatsApp Contact</Link></li>
+            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Areas Serviced</h4>
+            <ul className="space-y-4 text-text-secondary text-sm">
+              <li><Link to="/web-designer-cape-town" className="hover:text-electric-blue transition-colors">Cape Town</Link></li>
+              <li><Link to="/website-design-langebaan" className="hover:text-electric-blue transition-colors">Langebaan</Link></li>
+              <li><Link to="/seo-services-cape-town" className="hover:text-electric-blue transition-colors">SEO Services CT</Link></li>
+              <li><Link to="/google-maps-seo-cape-town" className="hover:text-electric-blue transition-colors">Google Maps SEO</Link></li>
+              <li><Link to="/affordable-websites-south-africa" className="hover:text-electric-blue transition-colors">Affordable SA Sites</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Quick Links</h4>
-            <ul className="space-y-4 text-text-secondary">
-              <li><a href="/#services" className="hover:text-electric-blue transition-colors">Services</a></li>
-              <li><a href="/#pricing" className="hover:text-electric-blue transition-colors">Pricing</a></li>
-              <li><Link to="/blog" className="hover:text-electric-blue transition-colors">Blog</Link></li>
-              <li><a href="#" className="hover:text-electric-blue transition-colors">Privacy Policy</a></li>
+            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Resources</h4>
+            <ul className="space-y-4 text-text-secondary text-sm">
+              <li><Link to="/blog" className="hover:text-electric-blue transition-colors">Expert Blog</Link></li>
+              <li><a href="/#services" className="hover:text-electric-blue transition-colors">Our Services</a></li>
+              <li><a href="/#pricing" className="hover:text-electric-blue transition-colors">Pricing Plans</a></li>
+              <li><a href="/#portfolio" className="hover:text-electric-blue transition-colors">Case Studies</a></li>
             </ul>
           </div>
         </div>

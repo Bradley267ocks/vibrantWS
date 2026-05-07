@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { Calendar, User, Tag, ArrowLeft, Share2, MessageCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -18,6 +19,14 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-dark-primary text-white font-sans selection:bg-electric-blue selection:text-black">
+      <Helmet>
+        <title>{post.title} | Vibrant Web Solutions Blog</title>
+        <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.image} />
+        <meta name="author" content={post.author} />
+      </Helmet>
       <Navbar />
       
       <main className="pt-32 pb-24">
