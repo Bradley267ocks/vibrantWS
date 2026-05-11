@@ -14,6 +14,8 @@ import {
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+import { Link } from 'react-router-dom';
+
 interface LocalSEOPageProps {
   title: string;
   metaDescription: string;
@@ -160,14 +162,14 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({
               </div>
 
               <div className="p-8 rounded-3xl bg-dark-secondary border border-white/10">
-                <h3 className="text-xl font-bold mb-4 text-white">Areas Serviced</h3>
-                <ul className="space-y-2 text-sm text-text-secondary">
-                  <li>• Cape Town CBD</li>
-                  <li>• Langebaan & West Coast</li>
-                  <li>• Stellenbosch & Winelands</li>
-                  <li>• Century City & Milnerton</li>
-                  <li>• Bloubergstrand</li>
-                  <li>• Northern Suburbs</li>
+                <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
+                <ul className="space-y-3 text-sm text-text-secondary">
+                  <li><Link to="/web-designer-cape-town" className="hover:text-electric-blue transition-colors flex items-center gap-2">• Web Designer Cape Town</Link></li>
+                  <li><Link to="/website-design-langebaan" className="hover:text-electric-blue transition-colors flex items-center gap-2">• Website Design Langebaan</Link></li>
+                  <li><Link to="/seo-services-cape-town" className="hover:text-electric-blue transition-colors flex items-center gap-2">• SEO Services Cape Town</Link></li>
+                  <li><Link to="/google-maps-seo-cape-town" className="hover:text-electric-blue transition-colors flex items-center gap-2">• Google Maps SEO</Link></li>
+                  <li><Link to="/affordable-websites-south-africa" className="hover:text-electric-blue transition-colors flex items-center gap-2">• Affordable SA Websites</Link></li>
+                  <li><Link to="/blog" className="hover:text-electric-blue transition-colors flex items-center gap-2">• Business Growth Blog</Link></li>
                 </ul>
               </div>
             </aside>

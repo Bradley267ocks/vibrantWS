@@ -50,16 +50,63 @@ const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20
 const AgencyCredentials = () => (
   <div className="bg-dark-secondary py-10 border-y border-white/5">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p className="text-center text-xs font-bold uppercase tracking-widest text-text-secondary mb-8">Trusted by 100+ South African Businesses</p>
-      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
-        {/* Placeholder Logos with text for authority */}
-        <div className="flex items-center gap-2"><Globe className="w-5 h-5" /> <span className="font-display font-bold">Google Partner</span></div>
-        <div className="flex items-center gap-2"><Smartphone className="w-5 h-5" /> <span className="font-display font-bold">Mobile First Agency</span></div>
-        <div className="flex items-center gap-2"><Shield className="w-5 h-5" /> <span className="font-display font-bold">Secure SA Hosting</span></div>
-        <div className="flex items-center gap-2"><Zap className="w-5 h-5" /> <span className="font-display font-bold">Top Speed Optimization</span></div>
+      <p className="text-center text-xs font-bold uppercase tracking-widest text-text-secondary mb-8">Dominating Local SEO in South Africa</p>
+      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 transition-all">
+        <div className="flex items-center gap-2"><Globe className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">Google Search Authority</span></div>
+        <div className="flex items-center gap-2"><Smartphone className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">100% Core Web Vitals</span></div>
+        <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">Secure Data Protection</span></div>
+        <div className="flex items-center gap-2"><Zap className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">Fast-Loading Agency</span></div>
       </div>
     </div>
   </div>
+);
+
+const AboutEEAT = () => (
+  <section className="py-24 bg-dark-secondary relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative">
+          <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10">
+             <img 
+               src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=max&q=80" 
+               alt="Vibrant Web Solutions Team" 
+               className="w-full h-auto object-contain block"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/60 via-transparent to-transparent pointer-events-none"></div>
+             <div className="absolute bottom-8 left-8">
+               <p className="text-electric-blue font-black text-4xl mb-2">5+</p>
+               <p className="text-white font-bold uppercase tracking-widest text-xs">Years of Growth Expertise</p>
+             </div>
+          </div>
+          <div className="absolute -top-6 -right-6 w-32 h-32 bg-electric-blue/20 blur-3xl -z-10"></div>
+        </div>
+        <div>
+          <span className="text-neon-green text-xs font-black uppercase tracking-[0.2em] mb-4 block">Authority & Expertise</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-white tracking-tighter">
+            Empowering South African Businesses to <span className="text-electric-blue">Dominate Digitally</span>
+          </h2>
+          <div className="space-y-6 text-text-secondary leading-relaxed">
+            <p>
+              Vibrant Web Solutions was born from a simple mission: to bridge the gap between high-level digital performance and South African small business affordability. We don't just build websites; we engineer sales systems.
+            </p>
+            <p>
+              Our team consists of Google Maps ranking specialists, UI/UX designers, and local SEO strategists dedicated to putting your business in the Top 3 search results. We combine technical excellence with deep market understanding to deliver results that impact your daily revenue.
+            </p>
+            <div className="grid grid-cols-2 gap-8 pt-6">
+              <div>
+                <h4 className="text-white font-bold mb-2">Our Mission</h4>
+                <p className="text-sm">To provide every local entrepreneur with the digital tools needed to compete with national brands.</p>
+              </div>
+              <div>
+                <h4 className="text-white font-bold mb-2">Our Vision</h4>
+                <p className="text-sm">To become the leading catalyst for small business growth in the Western Cape and beyond.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
 const AreasServed = () => (
@@ -471,40 +518,40 @@ const WhyChooseUs = () => {
 const Portfolio = () => {
   const projects = [
     { 
-      img: "https://i.ibb.co/rfTz8tTh/Opera-Snapshot-2026-03-19-173306-www-prestigepoolscare-co-za.png", 
-      title: "Prestige Pools Care",
+      img: "https://i.ibb.co/1GfmFspm/www-fspainting-co-za.png", 
+      title: "FS Painting",
       location: "Cape Town",
-      results: "150% Increase in Local Leads"
+      results: "185% Increase in Leads"
+    },
+    { 
+      img: "https://i.ibb.co/bM7fMdsG/www-elitefinishes-co-za.png", 
+      title: "Elite Finishes",
+      location: "Langebaan",
+      results: "#1 Ranking West Coast"
+    },
+    { 
+      img: "https://i.ibb.co/BVv7v83D/www-leroysweldingworks-co-za.png", 
+      title: "Leroy's Welding",
+      location: "Saldanha",
+      results: "3x More Customer Calls"
+    },
+    { 
+      img: "https://i.ibb.co/pvnY2xNv/Www-Strong-Root-co-za.png", 
+      title: "Strong Root Foundations",
+      location: "Western Cape",
+      results: "Dominant Market Share"
     },
     { 
       img: "https://i.ibb.co/20YDHT6w/Gemini-Generated-Image-wx6rtowx6rtowx6r.png", 
-      title: "West Coast Electrical",
-      location: "Langebaan",
-      results: "#1 Google Maps Ranking"
+      title: "Electrical Services",
+      location: "Cape Town",
+      results: "High-Volume Bookings"
     },
     { 
       img: "https://i.ibb.co/XxRTJSbb/Gemini-Generated-Image-m4mj90m4mj90m4mj.png", 
-      title: "GreenScapes SA",
+      title: "Garden Maintenance",
       location: "Stellenbosch",
-      results: "20+ New Bookings Monthly"
-    },
-    { 
-      img: "https://i.ibb.co/svP4T60f/Gemini-Generated-Image-hpcca0hpcca0hpcc.png", 
-      title: "Vredenburg Construction",
-      location: "Vredenburg",
-      results: "Dominant Local Authority"
-    },
-    { 
-      img: "https://i.ibb.co/LX53BXGs/Gemini-Generated-Image-23g2ir23g2ir23g2.png", 
-      title: "Expert Plumbers CT",
-      location: "Cape Town CBD",
-      results: "High-Volume Lead Generation"
-    },
-    { 
-      img: "https://i.ibb.co/qMZX9zYR/Gemini-Generated-Image-8i0bv08i0bv08i0b.png", 
-      title: "Diamond Shine CarWash",
-      location: "Century City",
-      results: "Instant SEO Visibility"
+      results: "Local SEO Success"
     }
   ];
 
@@ -518,18 +565,18 @@ const Portfolio = () => {
           <p className="text-text-secondary max-w-2xl mx-auto">Real results for local South African businesses. We transform websites into high-authority money-making assets.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           {projects.map((project, index) => (
             <motion.div 
               key={index}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl bg-dark-primary border border-white/10 shadow-sm"
+              className="group relative overflow-hidden rounded-2xl bg-dark-primary border border-white/10 shadow-sm flex flex-col"
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="bg-dark-secondary/50 flex items-center justify-center overflow-hidden p-4">
                 <img 
                   src={project.img} 
                   alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -918,6 +965,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <AgencyCredentials />
+      <AboutEEAT />
       <Problem />
       <Services />
       <HowItWorks />

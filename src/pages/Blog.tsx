@@ -40,11 +40,11 @@ const Blog = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group flex flex-col bg-dark-secondary border border-white/10 rounded-3xl overflow-hidden hover:border-electric-blue/30 transition-all shadow-sm"
               >
-                <Link to={`/blog/${post.id}`} className="aspect-video overflow-hidden">
+                <Link to={`/blog/${post.id}`} className="bg-dark-primary flex items-center justify-center overflow-hidden h-48 border-b border-white/5">
                   <img 
                     src={post.image} 
                     alt={post.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-[1.05] transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
                 </Link>

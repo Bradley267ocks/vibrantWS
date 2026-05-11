@@ -62,11 +62,11 @@ const BlogPost = () => {
             </div>
           </motion.div>
 
-          <div className="aspect-video rounded-3xl overflow-hidden mb-12 border border-white/10">
+          <div className="rounded-3xl overflow-hidden mb-12 border border-white/10 bg-dark-secondary">
             <img 
               src={post.image} 
               alt={post.title} 
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain block mx-auto"
               referrerPolicy="no-referrer"
             />
           </div>
