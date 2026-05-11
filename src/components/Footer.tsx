@@ -70,6 +70,20 @@ const Footer = () => {
               <li><a href="/#portfolio" className="hover:text-electric-blue transition-colors">Case Studies</a></li>
             </ul>
           </div>
+
+          <div>
+            <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Contact Us</h4>
+            <ul className="space-y-4 text-text-secondary text-sm">
+              <li className="flex items-center gap-2">
+                <span className="text-electric-blue">Email:</span> 
+                <a href="mailto:help@vibrantws.co.za" className="hover:text-electric-blue transition-colors">help@vibrantws.co.za</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-electric-blue">WhatsApp:</span>
+                <a href={WHATSAPP_URL} className="hover:text-electric-blue transition-colors">+27 64 519 2556</a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">

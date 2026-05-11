@@ -602,7 +602,7 @@ const FAQ = () => {
     { q: "Do I own my website?", a: "Yes, 100%. Once the final payment is made, you own the website and all its assets." },
     { q: "What is the monthly R300 for?", a: "This covers high-speed local hosting, security updates, daily backups, and dedicated technical support." },
     { q: "Can I update the site myself?", a: "Absolutely! We build on user-friendly platforms and provide basic training so you can make simple updates." },
-    { q: "Do you offer email addresses?", a: "Yes, all our hosting packages include professional business email addresses (e.g., info@vibrantws.co.za)." }
+    { q: "Do you offer email addresses?", a: "Yes, all our hosting packages include professional business email addresses (e.g., help@vibrantws.co.za)." }
   ];
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -676,7 +676,7 @@ const LeadForm = () => {
                 </div>
                 <div>
                   <p className="text-xs text-text-secondary uppercase font-bold tracking-widest">Email Us</p>
-                  <p className="font-bold">info@vibrantws.co.za</p>
+                  <p className="font-bold">help@vibrantws.co.za</p>
                 </div>
               </div>
             </div>
@@ -692,8 +692,8 @@ const LeadForm = () => {
               Tell us about your business — we’ll show you exactly how to get more customers online.
             </p>
             <form 
-              method="post" 
-              action="https://systeme.io/embedded/39250656/subscription"
+              method="POST" 
+              action="https://formspree.io/f/help@vibrantws.co.za"
               className="space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
