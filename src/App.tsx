@@ -693,7 +693,7 @@ const LeadForm = () => {
             </p>
             <form 
               method="POST" 
-              action="https://formspree.io/f/help@vibrantws.co.za"
+              action="https://formspree.io/f/mnnvvwyy"
               className="space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
