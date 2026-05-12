@@ -40,7 +40,7 @@ const Blog = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group flex flex-col bg-dark-secondary border border-white/10 rounded-3xl overflow-hidden hover:border-electric-blue/30 transition-all shadow-sm"
               >
-                <Link to={`/blog/${post.id}`} className="bg-dark-primary flex items-center justify-center overflow-hidden h-48 border-b border-white/5">
+                <Link to={`/blog/${post.id}`} className="bg-dark-primary flex items-center justify-center overflow-hidden h-48 border-b border-white/5 cursor-pointer">
                   <img 
                     src={post.image} 
                     alt={post.title} 
@@ -53,7 +53,7 @@ const Blog = () => {
                     <span className="flex items-center gap-1"><Tag size={12} className="text-electric-blue" /> {post.category}</span>
                     <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 group-hover:text-electric-blue transition-colors leading-tight text-white">
+                  <h2 className="text-2xl font-bold mb-4 group-hover:text-electric-blue transition-colors leading-tight text-white cursor-pointer transition-colors">
                     <Link to={`/blog/${post.id}`}>{post.title}</Link>
                   </h2>
                   <p className="text-text-secondary text-sm mb-6 flex-grow leading-relaxed">
@@ -61,7 +61,7 @@ const Blog = () => {
                   </p>
                   <Link 
                     to={`/blog/${post.id}`}
-                    className="inline-flex items-center gap-2 text-electric-blue font-bold text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-electric-blue font-bold text-sm hover:gap-3 transition-all cursor-pointer"
                   >
                     Read More <ArrowRight size={16} />
                   </Link>

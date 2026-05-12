@@ -1,8 +1,9 @@
 import React from 'react';
-import { Smartphone, Globe } from 'lucide-react';
+import { Smartphone, Globe, Facebook, Instagram, Twitter, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
+const FACEBOOK_URL = "https://www.facebook.com/vibrantwebsolutions";
 
 const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
   <svg 
@@ -18,12 +19,22 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
 );
 
 const Footer = () => {
+  const handleHashLink = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = `/#${id}`;
+    }
+  };
+
   return (
     <footer className="bg-dark-secondary pt-24 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
+            <Link to="/" className="flex items-center gap-3 mb-6 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img 
                 src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
                 alt="Vibrant Web Solutions Logo" 
@@ -37,37 +48,57 @@ const Footer = () => {
             <p className="text-text-secondary max-w-sm mb-8 leading-relaxed">
               Empowering South African businesses with fast, affordable, and high-quality web design solutions. Built with ❤️ in South Africa.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a 
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-electric-blue text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+                className="bg-electric-blue text-black px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
               >
                 <WhatsAppIcon size={20} />
-                Chat on WhatsApp Now
+                WhatsApp Us
               </a>
+              <div className="flex items-center gap-3 sm:ml-2">
+                <a 
+                  href={FACEBOOK_URL} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:bg-electric-blue hover:text-black hover:border-electric-blue transition-all cursor-pointer"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={18} />
+                </a>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:bg-electric-blue hover:text-black hover:border-electric-blue transition-all cursor-pointer"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={18} />
+                </a>
+              </div>
             </div>
           </div>
           
           <div>
             <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Areas Serviced</h4>
             <ul className="space-y-4 text-text-secondary text-sm">
-              <li><Link to="/web-designer-cape-town" className="hover:text-electric-blue transition-colors">Cape Town</Link></li>
-              <li><Link to="/website-design-langebaan" className="hover:text-electric-blue transition-colors">Langebaan</Link></li>
-              <li><Link to="/seo-services-cape-town" className="hover:text-electric-blue transition-colors">SEO Services CT</Link></li>
-              <li><Link to="/google-maps-seo-cape-town" className="hover:text-electric-blue transition-colors">Google Maps SEO</Link></li>
-              <li><Link to="/affordable-websites-south-africa" className="hover:text-electric-blue transition-colors">Affordable SA Sites</Link></li>
+              <li><Link to="/web-designer-cape-town" className="hover:text-electric-blue transition-colors cursor-pointer">Cape Town</Link></li>
+              <li><Link to="/website-design-langebaan" className="hover:text-electric-blue transition-colors cursor-pointer">Langebaan</Link></li>
+              <li><Link to="/seo-services-cape-town" className="hover:text-electric-blue transition-colors cursor-pointer">SEO Services CT</Link></li>
+              <li><Link to="/google-maps-seo-cape-town" className="hover:text-electric-blue transition-colors cursor-pointer">Google Maps SEO</Link></li>
+              <li><Link to="/affordable-websites-south-africa" className="hover:text-electric-blue transition-colors cursor-pointer">Affordable SA Sites</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Resources</h4>
             <ul className="space-y-4 text-text-secondary text-sm">
-              <li><Link to="/blog" className="hover:text-electric-blue transition-colors">Expert Blog</Link></li>
-              <li><a href="/#services" className="hover:text-electric-blue transition-colors">Our Services</a></li>
-              <li><a href="/#pricing" className="hover:text-electric-blue transition-colors">Pricing Plans</a></li>
-              <li><a href="/#portfolio" className="hover:text-electric-blue transition-colors">Case Studies</a></li>
+              <li><Link to="/blog" className="hover:text-electric-blue transition-colors cursor-pointer">Expert Blog</Link></li>
+              <li><a href="/#services" onClick={(e) => handleHashLink(e, 'services')} className="hover:text-electric-blue transition-colors cursor-pointer">Our Services</a></li>
+              <li><a href="/#pricing" onClick={(e) => handleHashLink(e, 'pricing')} className="hover:text-electric-blue transition-colors cursor-pointer">Pricing Plans</a></li>
+              <li><a href="/#portfolio" onClick={(e) => handleHashLink(e, 'portfolio')} className="hover:text-electric-blue transition-colors cursor-pointer">Case Studies</a></li>
             </ul>
           </div>
 
@@ -75,12 +106,16 @@ const Footer = () => {
             <h4 className="font-bold mb-6 text-white uppercase tracking-widest text-xs">Contact Us</h4>
             <ul className="space-y-4 text-text-secondary text-sm">
               <li className="flex items-center gap-2">
-                <span className="text-electric-blue">Email:</span> 
-                <a href="mailto:help@vibrantws.co.za" className="hover:text-electric-blue transition-colors">help@vibrantws.co.za</a>
+                <span className="text-electric-blue font-bold">Email:</span> 
+                <a href="mailto:help@vibrantws.co.za" className="hover:text-electric-blue transition-colors cursor-pointer decoration-dotted underline underline-offset-4">help@vibrantws.co.za</a>
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-electric-blue">WhatsApp:</span>
-                <a href={WHATSAPP_URL} className="hover:text-electric-blue transition-colors">+27 64 519 2556</a>
+                <span className="text-electric-blue font-bold">WhatsApp:</span>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-electric-blue transition-colors cursor-pointer decoration-dotted underline underline-offset-4">+27 64 519 2556</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-electric-blue font-bold">Phone:</span>
+                <a href="tel:+27645192556" className="hover:text-electric-blue transition-colors cursor-pointer decoration-dotted underline underline-offset-4">+27 64 519 2556</a>
               </li>
             </ul>
           </div>
@@ -88,10 +123,11 @@ const Footer = () => {
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-text-secondary text-sm">
-            © 2026 Vibrant Web Solutions. All rights reserved.
+            © 2026 Vibrant Web Solutions. All rights reserved. Registered South African Agency.
           </p>
           <div className="flex items-center gap-2 text-text-secondary text-sm">
-            <span>Built with ❤️ in South Africa</span>
+            <Globe size={14} className="text-electric-blue" />
+            <span>Serving SA Nationwide</span>
           </div>
         </div>
       </div>
@@ -100,3 +136,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

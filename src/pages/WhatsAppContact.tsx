@@ -29,7 +29,7 @@ const WhatsAppContact = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-electric-blue text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-2 bg-electric-blue text-black px-8 py-4 rounded-full font-bold hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
             >
               Chat on WhatsApp Now <ArrowRight size={20} />
             </a>
@@ -83,13 +83,15 @@ const WhatsAppContact = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href={WHATSAPP_URL}
-                  className="bg-electric-blue text-black px-8 py-4 rounded-full font-bold text-center hover:scale-105 transition-transform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-electric-blue text-black px-8 py-4 rounded-full font-bold text-center hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
                 >
                   Message Us on WhatsApp
                 </a>
                 <Link 
                   to="/"
-                  className="bg-white/5 text-white border border-white/10 px-8 py-4 rounded-full font-bold text-center hover:bg-white/10 transition-colors"
+                  className="bg-white/5 text-white border border-white/10 px-8 py-4 rounded-full font-bold text-center hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
                 >
                   Back to Home
                 </Link>

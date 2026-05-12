@@ -122,9 +122,15 @@ const AreasServed = () => (
           "Stellenbosch", "Milnerton", "Blouberg", "Paarl", "Bellville", 
           "Durbanville", "West Coast"
         ].map((area, i) => (
-          <div key={i} className="p-4 rounded-xl bg-dark-secondary border border-white/10 text-sm font-bold text-text-secondary hover:text-white transition-colors">
+          <a 
+            key={i} 
+            href={`https://wa.me/27645192556?text=Hi%2C%20I%20need%20a%20website%20in%20${encodeURIComponent(area)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-xl bg-dark-secondary border border-white/10 text-sm font-bold text-text-secondary hover:text-electric-blue hover:border-electric-blue/30 hover:scale-105 active:scale-95 transition-all cursor-pointer block"
+          >
             {area}
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -166,17 +172,21 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 
                 to="/get-my-website"
-                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 transition-transform group"
+                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all group cursor-pointer"
               >
                 Get My Website
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link 
-                to="/get-more-customers"
-                className="w-full sm:w-auto bg-dark-secondary border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-colors"
+              <a 
+                href="#services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full sm:w-auto bg-dark-secondary border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 active:scale-95 transition-all text-center cursor-pointer"
               >
-                Get More Customers
-              </Link>
+                View Services
+              </a>
             </div>
           </motion.div>
         </div>
@@ -446,7 +456,7 @@ const Pricing = () => {
               </ul>
               <Link 
                 to="/get-started"
-                className={`w-full py-4 rounded-xl font-bold transition-all text-center ${plan.popular ? 'bg-electric-blue text-black hover:scale-[1.02]' : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'}`}
+                className={`w-full py-4 rounded-xl font-bold transition-all text-center cursor-pointer active:scale-95 ${plan.popular ? 'bg-electric-blue text-black hover:scale-[1.02]' : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'}`}
               >
                 Choose {plan.name}
               </Link>
@@ -620,9 +630,9 @@ const FAQ = () => {
             <div key={index} className="border border-white/10 rounded-2xl overflow-hidden bg-dark-secondary">
               <button 
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors"
+                className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors cursor-pointer group"
               >
-                <span className="font-bold text-white">{faq.q}</span>
+                <span className="font-bold text-white group-hover:text-electric-blue transition-colors">{faq.q}</span>
                 <ChevronDown className={`text-electric-blue transition-transform ${activeIndex === index ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
@@ -704,24 +714,32 @@ const LeadForm = () => {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-center gap-4 text-white">
-                <div className="w-12 h-12 bg-dark-secondary rounded-2xl flex items-center justify-center border border-white/10">
-                  <Smartphone className="text-electric-blue w-5 h-5" />
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-white group cursor-pointer"
+              >
+                <div className="w-12 h-12 bg-dark-secondary rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-electric-blue/50 transition-colors">
+                  <Smartphone className="text-electric-blue w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
-                  <p className="text-xs text-text-secondary uppercase font-bold tracking-widest">Call or WhatsApp</p>
-                  <p className="font-bold">+27 64 519 2556</p>
+                  <p className="text-xs text-text-secondary uppercase font-bold tracking-widest">WhatsApp Us</p>
+                  <p className="font-bold group-hover:text-electric-blue transition-colors">+27 64 519 2556</p>
                 </div>
-              </div>
-              <div className="flex items-center gap-4 text-white">
-                <div className="w-12 h-12 bg-dark-secondary rounded-2xl flex items-center justify-center border border-white/10">
-                  <Mail className="text-electric-blue w-5 h-5" />
+              </a>
+              <a 
+                href="mailto:help@vibrantws.co.za"
+                className="flex items-center gap-4 text-white group cursor-pointer"
+              >
+                <div className="w-12 h-12 bg-dark-secondary rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-electric-blue/50 transition-colors">
+                  <Mail className="text-electric-blue w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <p className="text-xs text-text-secondary uppercase font-bold tracking-widest">Email Us</p>
-                  <p className="font-bold">help@vibrantws.co.za</p>
+                  <p className="font-bold group-hover:text-electric-blue transition-colors">help@vibrantws.co.za</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -951,17 +969,19 @@ const CTA = () => (
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link 
             to="/get-started"
-            className="w-full sm:w-auto bg-black text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform"
+            className="w-full sm:w-auto bg-black text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all text-center cursor-pointer shadow-lg"
           >
             Get Started
           </Link>
-          <Link 
-            to="/whatsapp-contact"
-            className="w-full sm:w-auto bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2"
+          <a 
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
           >
             <WhatsAppIcon size={24} />
             Chat on WhatsApp
-          </Link>
+          </a>
         </div>
       </div>
     </div>

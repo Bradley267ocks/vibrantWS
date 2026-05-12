@@ -94,7 +94,9 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
                 href={WHATSAPP_URL}
-                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 transition-transform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
               >
                 Get Started on WhatsApp <ArrowRight size={20} />
               </a>
@@ -143,7 +145,9 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({
                 </p>
                 <a 
                   href={WHATSAPP_URL}
-                  className="w-full block bg-electric-blue text-black px-6 py-4 rounded-xl font-bold text-center hover:scale-[1.02] transition-transform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block bg-electric-blue text-black px-6 py-4 rounded-xl font-bold text-center hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg"
                 >
                   Start My Transformation
                 </a>

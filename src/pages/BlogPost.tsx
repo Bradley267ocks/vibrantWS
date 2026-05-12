@@ -33,9 +33,9 @@ const BlogPost = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             to="/blog"
-            className="inline-flex items-center gap-2 text-text-secondary hover:text-electric-blue transition-colors mb-8 font-bold text-sm uppercase tracking-widest"
+            className="inline-flex items-center gap-2 text-text-secondary hover:text-electric-blue transition-colors mb-8 font-bold text-sm uppercase tracking-widest cursor-pointer group"
           >
-            <ArrowLeft size={16} /> Back to Blog
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Blog
           </Link>
 
           <motion.div
@@ -86,16 +86,16 @@ const BlogPost = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 transition-transform"
+                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
               >
                 <MessageCircle size={20} />
                 Chat on WhatsApp
               </a>
               <Link 
-                to="/#contact"
-                className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-colors"
+                to="/get-started"
+                className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 active:scale-95 transition-all text-center cursor-pointer"
               >
-                Get a Custom Quote
+                Get Started
               </Link>
             </div>
           </div>
