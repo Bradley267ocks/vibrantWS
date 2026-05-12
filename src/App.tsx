@@ -648,6 +648,44 @@ const FAQ = () => {
 };
 
 const LeadForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    business: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', business: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
     <section id="contact" className="py-24 bg-dark-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -692,20 +730,21 @@ const LeadForm = () => {
               Tell us about your business — we’ll show you exactly how to get more customers online.
             </p>
             <form 
-              method="POST" 
-              action="https://formspree.io/f/mnnvvwyy"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="first_name" className="text-sm font-bold text-text-secondary ml-1">Full Name *</label>
+                  <label htmlFor="name" className="text-sm font-bold text-text-secondary ml-1">Full Name *</label>
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
                     <input 
                       required
                       type="text"
-                      id="first_name"
-                      name="first_name"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="John Doe"
                       className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
                     />
@@ -720,6 +759,8 @@ const LeadForm = () => {
                       type="email"
                       id="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="you@example.com"
                       className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
                     />
@@ -729,27 +770,31 @@ const LeadForm = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="phone_number" className="text-sm font-bold text-text-secondary ml-1">Phone Number *</label>
+                  <label htmlFor="phone" className="text-sm font-bold text-text-secondary ml-1">Phone Number *</label>
                   <div className="relative">
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
                     <input 
                       required
                       type="tel"
-                      id="phone_number"
-                      name="phone_number"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="+27 64 519 2556"
                       className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="company_name" className="text-sm font-bold text-text-secondary ml-1">Business Name</label>
+                  <label htmlFor="business" className="text-sm font-bold text-text-secondary ml-1">Business Name</label>
                   <div className="relative">
                     <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
                     <input 
                       type="text"
-                      id="company_name"
-                      name="company_name"
+                      id="business"
+                      name="business"
+                      value={formData.business}
+                      onChange={handleChange}
                       placeholder="Your Company Ltd"
                       className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
                     />
@@ -760,19 +805,42 @@ const LeadForm = () => {
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-bold text-text-secondary ml-1">Message / Website Needs</label>
                 <textarea 
+                  required
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
                   placeholder="Tell us about your project..."
                   className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 px-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary resize-none"
                 ></textarea>
               </div>
 
+              {status === 'success' && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-green-500/20 border border-green-500/30 text-green-400 rounded-2xl text-center font-bold"
+                >
+                  Message sent! We'll be in touch soon.
+                </motion.div>
+              )}
+              {status === 'error' && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-4 bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl text-center font-bold font-sm"
+                >
+                  Something went wrong. Please try again or WhatsApp us.
+                </motion.div>
+              )}
+
               <button 
+                disabled={status === 'submitting'}
                 type="submit"
-                className="w-full bg-electric-blue text-black font-black py-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 text-lg"
+                className="w-full bg-electric-blue text-black font-black py-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 <ArrowRight className="w-5 h-5" />
               </button>
 
