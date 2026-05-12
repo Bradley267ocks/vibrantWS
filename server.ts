@@ -12,6 +12,15 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Health check
+  app.get("/api/health", (req, res) => {
+    res.json({ 
+      status: "ok", 
+      smtpConfigured: !!process.env.SMTP_PASS,
+      smtpUser: process.env.SMTP_USER || "help@vibrantws.co.za"
+    });
+  });
+
   // API Contact Route
   app.post("/api/contact", async (req, res) => {
     const { name, email, phone, business, message } = req.body;
@@ -19,6 +28,11 @@ async function startServer() {
     // Simple validation
     if (!name || !email || !message) {
       return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    if (!process.env.SMTP_PASS) {
+      console.error("SMTP_PASS is not set in environment variables.");
+      return res.status(500).json({ error: "Server configuration error: SMTP password missing." });
     }
 
     try {
@@ -30,6 +44,10 @@ async function startServer() {
           user: process.env.SMTP_USER || "help@vibrantws.co.za",
           pass: process.env.SMTP_PASS, 
         },
+        tls: {
+          // Do not fail on invalid certs (common with some shared hosting)
+          rejectUnauthorized: false
+        }
       });
 
       // Email to owner

@@ -656,10 +656,12 @@ const LeadForm = () => {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMessage('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -674,10 +676,13 @@ const LeadForm = () => {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', business: '', message: '' });
       } else {
+        const data = await response.json();
+        setErrorMessage(data.error || 'Something went wrong. Please try again or WhatsApp us.');
         setStatus('error');
       }
     } catch (error) {
       console.error('Submission error:', error);
+      setErrorMessage('Network error. Please check your connection and try again.');
       setStatus('error');
     }
   };
@@ -829,9 +834,9 @@ const LeadForm = () => {
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl text-center font-bold font-sm"
+                  className="p-4 bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl text-center font-bold text-sm"
                 >
-                  Something went wrong. Please try again or WhatsApp us.
+                  {errorMessage}
                 </motion.div>
               )}
 

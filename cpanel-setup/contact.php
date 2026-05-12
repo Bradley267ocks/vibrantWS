@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host       = 'cp68.domains.co.za'; // Your SMTP Host
         $mail->SMTPAuth   = true;
         $mail->Username   = 'help@vibrantws.co.za'; // Your SMTP Username
-        $mail->Password   = 'YOUR_PASSWORD_HERE';    // Your SMTP Password
+        $mail->Password   = 'eUJDwV4QACpo';    // Your SMTP Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL for Port 465
         $mail->Port       = 465;
 
