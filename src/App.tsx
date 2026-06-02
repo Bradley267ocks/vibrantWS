@@ -530,37 +530,31 @@ const Portfolio = () => {
     { 
       img: "https://i.ibb.co/1GfmFspm/www-fspainting-co-za.png", 
       title: "FS Painting",
-      location: "Cape Town",
       results: "185% Increase in Leads"
     },
     { 
       img: "https://i.ibb.co/bM7fMdsG/www-elitefinishes-co-za.png", 
       title: "Elite Finishes",
-      location: "Langebaan",
       results: "#1 Ranking West Coast"
     },
     { 
       img: "https://i.ibb.co/BVv7v83D/www-leroysweldingworks-co-za.png", 
       title: "Leroy's Welding",
-      location: "Saldanha",
       results: "3x More Customer Calls"
     },
     { 
       img: "https://i.ibb.co/pvnY2xNv/Www-Strong-Root-co-za.png", 
       title: "Strong Root Foundations",
-      location: "Western Cape",
       results: "Dominant Market Share"
     },
     { 
       img: "https://i.ibb.co/20YDHT6w/Gemini-Generated-Image-wx6rtowx6rtowx6r.png", 
       title: "Electrical Services",
-      location: "Cape Town",
       results: "High-Volume Bookings"
     },
     { 
       img: "https://i.ibb.co/XxRTJSbb/Gemini-Generated-Image-m4mj90m4mj90m4mj.png", 
       title: "Garden Maintenance",
-      location: "Stellenbosch",
       results: "Local SEO Success"
     }
   ];
@@ -591,10 +585,7 @@ const Portfolio = () => {
                 />
               </div>
               <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-bold text-lg text-white">{project.title}</h4>
-                  <span className="text-[10px] bg-electric-blue/10 text-electric-blue px-2 py-1 rounded uppercase font-black">{project.location}</span>
-                </div>
+                <h4 className="font-bold text-lg text-white mb-2">{project.title}</h4>
                 <p className="text-neon-green text-sm font-bold mb-1">{project.results}</p>
                 <p className="text-text-secondary text-xs">High-Authority Web Design & Local SEO</p>
               </div>
