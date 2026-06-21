@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CreditCard, Lock, ShieldCheck, Mail, User, ArrowRight, CheckCircle2, AlertCircle, Loader2, Info } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Loader2, Info, AlertCircle } from 'lucide-react';
 
 interface PaymentFormProps {
   planName?: string;
@@ -20,47 +20,14 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
     whatsapp: '',
     currentWebsite: '',
     businessType: '',
-    notes: '',
-    cardNumber: '',
-    expiry: '',
-    cvv: ''
+    notes: ''
   });
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'redirecting' | 'error' | 'success'>('idle');
   const [error, setError] = useState<string | null>(null);
 
-  const formatCardNumber = (value: string) => {
-    const v = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-    const matches = v.match(/\d{4,16}/g);
-    const match = (matches && matches[0]) || '';
-    const parts = [];
-
-    for (let i = 0, len = match.length; i < len; i += 4) {
-      parts.push(match.substring(i, i + 4));
-    }
-
-    if (parts.length > 0) {
-      return parts.join(' ');
-    } else {
-      return value;
-    }
-  };
-
-  const formatExpiry = (value: string) => {
-    const v = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-    if (v.length >= 2) {
-      return v.substring(0, 2) + '/' + v.substring(2, 4);
-    }
-    return v;
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    let { name, value } = e.target;
-    
-    if (name === 'cardNumber') value = formatCardNumber(value);
-    if (name === 'expiry') value = formatExpiry(value);
-    if (name === 'cvv') value = value.substring(0, 4).replace(/[^0-9]/gi, '');
-
+    const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
@@ -68,13 +35,6 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
     e.preventDefault();
     setStatus('submitting');
     setError(null);
-
-    // Basic validation
-    if (formData.cardNumber.replace(/\s/g, '').length < 13) {
-      setError('Please enter a valid card number');
-      setStatus('error');
-      return;
-    }
 
     try {
       // Step 1: Initiate payment on backend
@@ -84,21 +44,18 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.whatsapp,
+          businessName: formData.businessName,
           amount: amount,
           itemName: planName,
           isSubscription: isSubscription,
-          customStr: JSON.stringify({
-            businessName: formData.businessName,
-            whatsapp: formData.whatsapp,
-            currentWebsite: formData.currentWebsite,
-            businessType: formData.businessType,
-            notes: formData.notes
-          })
+          notes: `${formData.businessType} | ${formData.currentWebsite} | ${formData.notes}`
         })
       });
 
       if (!response.ok) {
-        throw new Error('Failed to initiate payment. Please check credentials.');
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to initiate payment. Please check with support.');
       }
 
       const data = await response.json();
@@ -193,7 +150,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-bold text-primary-dark/40 ml-1">WhatsApp Number</label>
+              <label className="text-xs font-bold text-primary-dark/40 ml-1">Phone / WhatsApp Number</label>
               <input 
                 required
                 type="tel"
@@ -245,58 +202,9 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
           </div>
         </div>
 
-        {/* Step 2: Payment Details */}
-        <div className="space-y-4 pt-4 border-t border-medium-teal/10">
-          <h3 className="text-xs font-black text-primary-dark uppercase tracking-widest border-b border-medium-teal/5 pb-2">Billing Information</h3>
-          
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary-dark/40 ml-1">Card Number</label>
-              <div className="relative">
-                <CreditCard className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dark/30" />
-                <input 
-                  required
-                  type="text"
-                  name="cardNumber"
-                  value={formData.cardNumber}
-                  onChange={handleChange}
-                  placeholder="0000 0000 0000 0000"
-                  className="w-full bg-light-bg/50 border border-medium-teal/10 rounded-xl py-4 pl-12 pr-4 focus:border-medium-teal outline-none transition-all font-mono"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-primary-dark/40 ml-1">Expiry Date</label>
-                <input 
-                  required
-                  type="text"
-                  name="expiry"
-                  value={formData.expiry}
-                  onChange={handleChange}
-                  placeholder="MM/YY"
-                  className="w-full bg-light-bg/50 border border-medium-teal/10 rounded-xl py-4 px-4 focus:border-medium-teal outline-none transition-all font-mono"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-primary-dark/40 ml-1">CVV</label>
-                <div className="relative">
-                  <Lock className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dark/30" />
-                  <input 
-                    required
-                    type="password"
-                    name="cvv"
-                    maxLength={4}
-                    value={formData.cvv}
-                    onChange={handleChange}
-                    placeholder="123"
-                    className="w-full bg-light-bg/50 border border-medium-teal/10 rounded-xl py-4 px-4 focus:border-medium-teal outline-none transition-all font-mono"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="bg-medium-teal/5 p-4 rounded-2xl flex gap-3 items-center border border-medium-teal/10">
+          <Info className="text-medium-teal w-5 h-5 shrink-0" />
+          <p className="text-[11px] text-primary-dark/60 font-medium">You will be redirected to PayFast's secure engine to complete your reservation.</p>
         </div>
 
         {/* Status Messages */}
@@ -323,7 +231,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
           ) : status === 'redirecting' ? (
             "Redirecting to PayFast..."
           ) : (
-            <>Reserve My Free Build Slot <ArrowRight /></>
+            <>Continue to Secure Payment <ArrowRight /></>
           )}
         </button>
 

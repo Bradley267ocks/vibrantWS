@@ -32,6 +32,10 @@ async function startServer() {
   const PORT = 3000;
 
   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
+  // Store reservations in memory for this session (In production, use a DB like Firestore)
+  const reservations: any[] = [];
 
   // Health check
   app.get("/api/health", (req, res) => {
@@ -44,7 +48,7 @@ async function startServer() {
 
   // PayFast Initiation Route
   app.post("/api/payfast/initiate", (req, res) => {
-    const { name, email, amount, itemName, isSubscription } = req.body;
+    const { name, email, phone, businessName, amount, itemName, isSubscription, notes } = req.body;
 
     const merchantId = process.env.PAYFAST_MERCHANT_ID;
     const merchantKey = process.env.PAYFAST_MERCHANT_KEY;
@@ -55,12 +59,28 @@ async function startServer() {
       return res.status(500).json({ error: "PayFast configuration missing on server." });
     }
 
+    // Save the pending reservation
+    const reservationId = `vibrant_${Date.now()}`;
+    reservations.push({
+      id: reservationId,
+      name,
+      email,
+      phone,
+      businessName,
+      notes,
+      amount,
+      status: 'pending',
+      createdAt: new Date()
+    });
+
+    console.log(`[RESERVATION PENDING] ${reservationId} for ${businessName} (${email})`);
+
     const baseUrl = env === "live" 
       ? "https://www.payfast.co.za/eng/process" 
       : "https://sandbox.payfast.co.za/eng/process";
 
     const host = req.headers.host;
-    const protocol = req.secure ? "https" : "http";
+    const protocol = req.headers["x-forwarded-proto"] || (req.secure ? "https" : "http");
     const siteUrl = `${protocol}://${host}`;
 
     // Prepare data in specific order required by PayFast for signature
@@ -73,9 +93,11 @@ async function startServer() {
       name_first: name.split(" ")[0] || "Client",
       name_last: name.split(" ").slice(1).join(" ") || "User",
       email_address: email,
-      m_payment_id: `vibrant_${Date.now()}`,
-      amount: parseFloat(amount).toFixed(2),
-      item_name: itemName || "Web Solution Subscription",
+      cell_number: phone,
+      m_payment_id: reservationId,
+      amount: parseFloat(amount || 0).toFixed(2),
+      item_name: itemName || "Web Build Reservation",
+      custom_str1: businessName,
     };
 
     if (isSubscription) {
@@ -95,10 +117,25 @@ async function startServer() {
     });
   });
 
-  // PayFast ITN Notify Route (Placeholder for handling payment confirmation)
+  // PayFast ITN Notify Route
   app.post("/api/payfast/notify", (req, res) => {
-    console.log("PayFast ITN Received:", req.body);
-    // In a real app, you'd verify the signature here and update your DB
+    const data = req.body;
+    console.log("PayFast ITN Received:", data);
+    
+    // In PayFast ITN, variables are sent as form-urlencoded
+    const reservationId = data.m_payment_id;
+    const status = data.payment_status;
+
+    if (reservationId && status === 'COMPLETE') {
+      const reservation = reservations.find(r => r.id === reservationId);
+      if (reservation) {
+        reservation.status = 'paid';
+        reservation.payfast_payment_id = data.pf_payment_id;
+        console.log(`[PAYMENT SUCCESS] Reservation ${reservationId} is now active.`);
+        // Here you would typically trigger build automated emails or similar
+      }
+    }
+
     res.status(200).send("OK");
   });
 
