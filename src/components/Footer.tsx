@@ -38,7 +38,7 @@ const Footer = () => {
               <img 
                 src="https://i.ibb.co/S4B1XSSd/Untitled-design-5.jpg" 
                 alt="Vibrant Web Solutions Logo" 
-                className="h-10 w-auto rounded-md brightness-0 invert transition-opacity" 
+                className="h-10 w-auto rounded-md brightness-110 saturate-150 shadow-sm transition-opacity" 
                 referrerPolicy="no-referrer"
               />
               <span className="text-2xl font-display font-black tracking-tighter text-light-bg block group-hover:text-accent-green transition-colors">
