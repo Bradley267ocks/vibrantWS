@@ -43,9 +43,9 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
         <input type="hidden" name="m_payment_id" value={`vibrant_${Date.now()}`} />
         
         {/* Return URLs */}
-        <input type="hidden" name="return_url" value="https://www.vibrantws.co.za/success" />
-        <input type="hidden" name="cancel_url" value="https://www.vibrantws.co.za/cancel" />
-        <input type="hidden" name="notify_url" value="https://www.vibrantws.co.za/notify" />
+        <input type="hidden" name="return_url" value={`${window.location.origin}/success`} />
+        <input type="hidden" name="cancel_url" value={`${window.location.origin}/cancel`} />
+        <input type="hidden" name="notify_url" value={`${window.location.origin}/notify`} />
 
         {/* Security / Signature (Placeholder if required) */}
         {/* <input type="hidden" name="signature" value="..." /> */}

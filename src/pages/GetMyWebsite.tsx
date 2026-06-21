@@ -71,14 +71,14 @@ const GetMyWebsite = () => {
             <div className="bg-white border border-medium-teal/10 p-10 rounded-[2.5rem] my-12 shadow-2xl text-center">
               <h4 className="text-3xl font-bold mb-4 text-primary-dark">Reserve Your Free Build Slot</h4>
               <p className="text-primary-dark/60 mb-8 font-medium">
-                We only accept 5 new build-first requests per week to maintain our high quality standards. Reserve yours today for R0.
+                We only accept 5 new build-first requests per week to maintain our high quality standards. Reserve yours today for R10.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   to="/checkout"
                   className="bg-medium-teal text-white px-10 h-[56px] flex items-center justify-center rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
                 >
-                  Reserve Slot (R0)
+                  Reserve Slot (R10)
                 </Link>
                 <Link 
                   to="/"

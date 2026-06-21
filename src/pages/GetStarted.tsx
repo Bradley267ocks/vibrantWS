@@ -29,7 +29,7 @@ const GetStarted = () => {
               to="/checkout"
               className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
             >
-              Reserve My Build Slot for R0 <ArrowRight size={20} />
+              Reserve My Build Slot for R10 <ArrowRight size={20} />
             </Link>
           </motion.div>
 
@@ -44,7 +44,7 @@ const GetStarted = () => {
               <div className="flex gap-6 p-8 rounded-3xl bg-white border border-medium-teal/10 shadow-xl">
                 <div className="shrink-0 w-12 h-12 bg-medium-teal/10 rounded-xl flex items-center justify-center text-medium-teal font-black text-xl">01</div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2 text-primary-dark">Reserve Your Slot (R0)</h4>
+                  <h4 className="text-xl font-bold mb-2 text-primary-dark">Reserve Your Slot (R10)</h4>
                   <p className="text-primary-dark/60 font-medium mb-0">Secure your place in our build queue for free. We collect card details only to verify commitment and prevent spam, ensuring we focus on serious entrepreneurs.</p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const GetStarted = () => {
               to="/checkout"
               className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
             >
-              Reserve Slot for R0
+              Reserve Slot for R10
             </Link>
                 <Link 
                   to="/"

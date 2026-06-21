@@ -171,7 +171,7 @@ const Hero = () => {
               See Your New Website <span className="text-medium-teal italic">Before You Pay</span>
             </h1>
             <p className="text-secondary-dark/80 mb-10 max-w-2xl mx-auto font-medium">
-              We build your website first and send you a private preview link. If you love it, keep it for only R299 per month. Reserve your build slot today for R0.
+              We build your website first and send you a private preview link. If you love it, keep it for only R299 per month. Reserve your build slot today for R10.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 
@@ -421,7 +421,7 @@ const Pricing = () => {
     {
       step: "01",
       title: "Reserve Your Slot",
-      desc: "Secure your place in our development queue for R0. We require card details only to verify commitment and prevent spam.",
+      desc: "Secure your place in our development queue for R10. We require card details only to verify commitment and prevent spam.",
       cta: "Reserve My Free Slot"
     },
     {
@@ -446,7 +446,7 @@ const Pricing = () => {
             Get Your Website Built <span className="text-medium-teal italic">For Free First</span>
           </h2>
           <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">
-            We've removed all the risk. Reserve your build slot today for R0 and see your new site before committing to a subscription.
+            We've removed all the risk. Reserve your build slot today for R10 and see your new site before committing to a subscription.
           </p>
         </div>
 
@@ -1042,7 +1042,7 @@ const Home = () => {
     <div className="min-h-screen font-sans selection:bg-medium-teal selection:text-light-bg bg-light-bg">
       <Helmet>
         <title>Web Designer Cape Town & Langebaan | Professional Website Design SA</title>
-        <meta name="description" content="Affordable, high-converting web design and local SEO services in South Africa. Get a professional business website preview for R0 today." />
+        <meta name="description" content="Affordable, high-converting web design and local SEO services in South Africa. Get a professional business website preview for R10 today." />
         <script type="application/ld+json">
           {`
             {
@@ -1119,8 +1119,8 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
-        <Route path="/payment-cancel" element={<PaymentCancel />} />
+        <Route path="/success" element={<PaymentSuccess />} />
+        <Route path="/cancel" element={<PaymentCancel />} />
         
         {/* Local SEO Pages - Manually registered to satisfy strict TS types */}
         <Route 
