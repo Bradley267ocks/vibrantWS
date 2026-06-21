@@ -39,10 +39,10 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>Investing in a website in 2026 isn't just about "being online." It's about future-proofing your business. It's about ensuring that as the world becomes increasingly digital, your business remains relevant, visible, and profitable. At Vibrant Web Solutions, we specialize in helping South African small businesses make this transition fast and affordably.</p>
       
-      <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 my-8">
-        <h3 class="text-white font-bold mb-4">Ready to get your business online?</h3>
-        <p class="text-zinc-400 mb-6">Don't wait until your competitors have taken all the leads. Let's build your professional website in just 48 hours.</p>
-        <a href="https://wa.me/27645192556" class="bg-neon-green text-black px-6 py-3 rounded-full font-bold inline-block">Chat on WhatsApp</a>
+      <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
+        <h3 className="text-white font-bold mb-4">Ready to get your business online?</h3>
+        <p className="text-zinc-400 mb-6">Don't wait until your competitors have taken all the leads. Reserve your build slot for R0 today.</p>
+        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -75,10 +75,10 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>Getting more customers online isn't about magic; it's about strategy. By focusing on local visibility, trust-building, and easy communication, you can turn your website into a lead-generating machine. At Vibrant Web Solutions, we build these strategies into every site we create.</p>
 
-      <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 my-8">
-        <h3 class="text-white font-bold mb-4">Want more customers?</h3>
-        <p class="text-zinc-400 mb-6">Let's discuss a custom strategy to help your business dominate its local market.</p>
-        <a href="https://wa.me/27645192556" class="bg-neon-green text-black px-6 py-3 rounded-full font-bold inline-block">Get a Free Consultation</a>
+      <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
+        <h3 className="text-white font-bold mb-4">Want more customers?</h3>
+        <p className="text-zinc-400 mb-6">Let's discuss a custom strategy to help your business dominate its local market.</p>
+        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -94,24 +94,24 @@ export const blogPosts: BlogPost[] = [
       <p>One of the biggest myths in business is that a professional website has to cost tens of thousands of Rands. While some agencies charge those prices, it often puts high-quality digital tools out of reach for the very businesses that need them most—small local startups and service providers. At Vibrant Web Solutions, we're changing that.</p>
 
       <h2>The True Value of a Website</h2>
-      <p>A website shouldn't be seen as a cost; it should be seen as an investment. If a website costs you R1000 and brings in just one new customer worth R2000, it has already paid for itself twice over. Our goal is to provide that kind of ROI for every client we work with. We've streamlined our design process to focus on what actually moves the needle for small businesses, allowing us to keep our prices low without sacrificing quality.</p>
+      <p>A website shouldn't be seen as a cost; it should be seen as an investment. If a website starts generating just one new customer a month, it has already paid for itself. Our goal is to provide that kind of ROI for every client we work with. We've streamlined our design process to focus on what actually moves the needle for small businesses, allowing us to keep our prices low without sacrificing quality.</p>
 
       <h2>What Makes a Website "Professional"?</h2>
       <p>Price doesn't always equal quality. A professional website in 2026 needs to be three things: Fast, Mobile-Responsive, and Secure. Many expensive sites are bloated with unnecessary features that actually slow them down. We focus on clean code and high-performance hosting to ensure your site delivers a great experience for your users and ranks well on Google.</p>
 
       <h2>The Monthly Model: Why It Works</h2>
-      <p>We offer a monthly hosting and support model for R300. This is designed to take the technical headache away from you. For less than the cost of a tank of petrol, you get high-speed local hosting, SSL security, daily backups, and a team of experts you can call whenever you need help. This ensures your site stays healthy and effective long after the initial launch.</p>
+      <p>We offer a monthly hosting and support model for R299. This is designed to take the technical headache away from you. For less than the cost of a tank of petrol, you get high-speed local hosting, SSL security, daily backups, and a team of experts you can call whenever you need help. This ensures your site stays healthy and effective long after the initial launch.</p>
 
       <h2>No Big Upfront Costs</h2>
-      <p>We know that cash flow is king for small businesses. That's why we've kept our entry-level pricing at R1000. We want to remove the barriers to entry so that every South African entrepreneur can have a professional digital presence. You don't need to save up for months to get started. You can launch your business online today.</p>
+      <p>We know that cash flow is king for small businesses. That's why we've introduced our "Build Before You Pay" model. To reserve your development slot, you only pay a R0 booking fee. We then build your custom website preview first—if you love it, you keep it for a low R299/month subscription. We want to remove the barriers to entry so that every South African entrepreneur can have a professional digital presence. You don't need to save up for months to get started. You can launch your business online today.</p>
 
       <h2>Conclusion</h2>
       <p>Affordability doesn't have to mean "cheap." It means getting the best possible value for your money. At Vibrant Web Solutions, we're proud to support the backbone of the South African economy—our small businesses—by providing world-class web design at prices that make sense. Ready to join the digital revolution?</p>
 
-      <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 my-8">
-        <h3 class="text-white font-bold mb-4">Affordable. Fast. Professional.</h3>
-        <p class="text-zinc-400 mb-6">Get your business online for as little as R1000 once-off. No hidden fees, just results.</p>
-        <a href="https://wa.me/27645192556" class="bg-neon-green text-black px-6 py-3 rounded-full font-bold inline-block">View Our Packages</a>
+      <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
+        <h3 className="text-white font-bold mb-4">Affordable. Fast. Professional.</h3>
+        <p className="text-zinc-400 mb-6">Reserve your build slot for just R0 and see your site before you pay. No hidden fees, just results.</p>
+        <a href="https://wa.me/27645192556" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -141,10 +141,10 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>If you're not using WhatsApp as part of your digital strategy, you're missing out on a massive opportunity. It's the preferred communication method for South Africans, and it's built for conversion. At Vibrant Web Solutions, we integrate WhatsApp functionality into every website we build to ensure our clients get the best possible results.</p>
 
-      <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 my-8">
-        <h3 class="text-white font-bold mb-4">Ready to chat with your customers?</h3>
-        <p class="text-zinc-400 mb-6">Let's build a website that makes it easy for your customers to reach you instantly on WhatsApp.</p>
-        <a href="https://wa.me/27645192556" class="bg-neon-green text-black px-6 py-3 rounded-full font-bold inline-block">Learn More About WhatsApp Integration</a>
+      <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
+        <h3 className="text-white font-bold mb-4">Ready to chat with your customers?</h3>
+        <p className="text-zinc-400 mb-6">Let's build a website that makes it easy for your customers to reach you instantly on WhatsApp.</p>
+        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -177,10 +177,10 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>The biggest mistake you can make is thinking that a website is an "extra" rather than a core part of your business. In 2026, your digital presence is your business. Don't let these common mistakes hold you back from the success you deserve. Vibrant Web Solutions is here to help you get it right from day one.</p>
 
-      <div class="bg-zinc-900 p-8 rounded-2xl border border-white/5 my-8">
-        <h3 class="text-white font-bold mb-4">Stop making these mistakes today.</h3>
-        <p class="text-zinc-400 mb-6">Let's build a professional website that gives your business the credibility and visibility it needs to grow.</p>
-        <a href="https://wa.me/27645192556" class="bg-neon-green text-black px-6 py-3 rounded-full font-bold inline-block">Get a Free Website Audit</a>
+      <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
+        <h3 className="text-white font-bold mb-4">Stop making these mistakes today.</h3>
+        <p className="text-zinc-400 mb-6">Let's build a professional website that gives your business the credibility and visibility it needs to grow.</p>
+        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   }

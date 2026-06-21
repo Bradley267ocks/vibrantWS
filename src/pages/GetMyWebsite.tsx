@@ -9,7 +9,7 @@ const GetMyWebsite = () => {
   const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%20want%20to%20get%20my%20website%20started%21";
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-sans selection:bg-electric-blue selection:text-black">
+    <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
       <Navbar />
       
       <main className="pt-32 pb-24">
@@ -19,105 +19,89 @@ const GetMyWebsite = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black tracking-tighter mb-8 leading-tight text-white">
-              Professional Website Design for <span className="text-electric-blue">South African Small Businesses</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black tracking-tighter mb-8 leading-tight text-primary-dark">
+              We Build Your Website <span className="text-medium-teal italic">For Free First</span>
             </h1>
-            <p className="text-xl text-text-secondary leading-relaxed mb-10">
-              Stop losing customers to competitors who have better websites. We build customer-generating machines that work for you 24/7.
+            <p className="text-xl text-primary-dark/70 leading-relaxed mb-10 font-medium">
+              Reserve your free build slot today. We'll build a complete preview of your new authority website and send you a private link to review.
             </p>
-            <a 
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-electric-blue text-black px-8 py-4 rounded-full font-bold hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
+            <Link 
+              to="/checkout"
+              className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
             >
-              Get Started on WhatsApp <ArrowRight size={20} />
-            </a>
+              Start My Free Build Preview <ArrowRight size={20} />
+            </Link>
           </motion.div>
 
-          <div className="prose prose-invert prose-neon max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-white">Why Your South African Business Needs a Professional Website in 2026</h2>
-            <p className="text-text-secondary mb-6 leading-relaxed">
-              In today's digital age, your website is often the first point of contact between your business and potential customers. In South Africa, where mobile internet usage is skyrocketing, having a professional, mobile-responsive website is no longer a luxury—it's a necessity for survival. Whether you're a plumber in Johannesburg, an electrician in Cape Town, or a salon owner in Durban, your customers are searching for your services online right now. If you're not there, you're giving money away to your competitors.
+          <div className="prose prose-slate max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-primary-dark">Why We Build Your Site Before You Pay</h2>
+            <p className="text-primary-dark/70 mb-6 leading-relaxed font-medium">
+              In a market full of empty promises, we choose to lead with value. We believe that once you see the quality, speed, and conversion potential of our work, you'll want to keep it. This "Build-First" approach removes the stress of hiring a web designer and puts you in the driver's seat. Whether you're a plumber in Johannesburg, an electrician in Cape Town, or a local service provider, you deserve a site that actually generates leads.
             </p>
             
-            <h3 className="text-2xl font-bold mb-4 text-white">The High Cost of Not Having a Website</h3>
-            <p className="text-text-secondary mb-6 leading-relaxed">
-              Many small business owners believe that a Facebook page or a Google Business profile is enough. While these are important tools, they don't replace a dedicated website. Without a website, you don't own your digital presence. You're at the mercy of algorithm changes and platform policies. More importantly, a professional website builds trust. Studies show that over 75% of consumers judge a company's credibility based on its website design. If a potential client can't find a professional site for your business, they'll likely move on to someone who looks more established.
-            </p>
-
+            <h3 className="text-2xl font-bold mb-4 text-primary-dark">The Benefits of Our Build-First Model</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-              <div className="p-8 rounded-2xl bg-dark-secondary border border-white/10">
-                <Smartphone className="text-electric-blue mb-4" size={32} />
-                <h4 className="text-xl font-bold mb-2 text-white">Mobile-First Design</h4>
-                <p className="text-text-secondary text-sm">Most South Africans access the web via smartphones. Our designs are optimized for the best mobile experience.</p>
+              <div className="p-8 rounded-2xl bg-white border border-medium-teal/10 shadow-xl">
+                <Shield className="text-medium-teal mb-4" size={32} />
+                <h4 className="text-xl font-bold mb-2 text-primary-dark">Zero Financial Risk</h4>
+                <p className="text-primary-dark/50 text-sm font-medium">You don't pay anything upfront. A free booking reserves your slot—we only collect card details to ensure commitment.</p>
               </div>
-              <div className="p-8 rounded-2xl bg-dark-secondary border border-white/10">
-                <Search className="text-electric-blue mb-4" size={32} />
-                <h4 className="text-xl font-bold mb-2 text-white">SEO Optimized</h4>
-                <p className="text-text-secondary text-sm">We build sites that Google loves, helping you show up when local customers search for your services.</p>
+              <div className="p-8 rounded-2xl bg-white border border-medium-teal/10 shadow-xl">
+                <Search className="text-medium-teal mb-4" size={32} />
+                <h4 className="text-xl font-bold mb-2 text-primary-dark">SEO Performance Preview</h4>
+                <p className="text-primary-dark/50 text-sm font-medium">Your preview site is built with SEO in mind from day one. You'll see exactly how your site is structured to rank on Google.</p>
               </div>
-              <div className="p-8 rounded-2xl bg-dark-secondary border border-white/10">
-                <Zap className="text-electric-blue mb-4" size={32} />
-                <h4 className="text-xl font-bold mb-2 text-white">Ultra-Fast Loading</h4>
-                <p className="text-text-secondary text-sm">Speed matters. We ensure your site loads instantly, reducing bounce rates and keeping visitors engaged.</p>
+              <div className="p-8 rounded-2xl bg-white border border-medium-teal/10 shadow-xl">
+                <Zap className="text-medium-teal mb-4" size={32} />
+                <h4 className="text-xl font-bold mb-2 text-primary-dark">7-Day Turnaround</h4>
+                <p className="text-primary-dark/50 text-sm font-medium">We move fast. Within 7 business days of your booking, your private preview link will be ready for your review.</p>
               </div>
-              <div className="p-8 rounded-2xl bg-dark-secondary border border-white/10">
-                <Shield className="text-electric-blue mb-4" size={32} />
-                <h4 className="text-xl font-bold mb-2 text-white">Secure & Reliable</h4>
-                <p className="text-text-secondary text-sm">With our R300/month hosting, you get SSL security, daily backups, and 99.9% uptime guarantee.</p>
+              <div className="p-8 rounded-2xl bg-white border border-medium-teal/10 shadow-xl">
+                <Smartphone className="text-medium-teal mb-4" size={32} />
+                <h4 className="text-xl font-bold mb-2 text-primary-dark">R299 All-Inclusive</h4>
+                <p className="text-primary-dark/50 text-sm font-medium">No hidden fees. Your subscription covers premium hosting, SSL security, updates, and dedicated support.</p>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-white">Our Results-Driven Approach</h3>
-            <p className="text-text-secondary mb-6 leading-relaxed">
-              At Vibrant Web Solutions, we don't just build "pretty" websites. We build customer-generating machines. Every element of our design is focused on one goal: converting visitors into leads and sales. From strategic call-to-action buttons to intuitive navigation, we guide your potential customers through a journey that ends with them contacting you.
-            </p>
-            <p className="text-text-secondary mb-6 leading-relaxed">
-              We understand the unique challenges faced by South African entrepreneurs. That's why we've streamlined our process to deliver high-quality websites in just 48 hours. We know you don't have weeks to wait for a developer to get back to you. You need to be online, and you need to be there now.
+            <h3 className="text-2xl font-bold mb-4 text-primary-dark">Affordable Growth for Local Success</h3>
+            <p className="text-primary-dark/70 mb-6 leading-relaxed font-medium">
+              We've structured our model to be the most affordable way to get a high-quality website in South Africa. For just R299 per month, you get a professionally managed digital storefront that works for you 24/7. No more DIY website struggles or overhead costs.
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 text-white">Affordable Pricing for Local Growth</h3>
-            <p className="text-text-secondary mb-6 leading-relaxed">
-              We've structured our pricing to be accessible for every stage of business. Our starter packages begin at just R1000 once-off, with a low monthly fee of R300 for hosting and support. This isn't just an expense; it's an investment in your business's future. For the price of a few takeaway meals, you can have a professional digital storefront that works for you even while you sleep.
-            </p>
-
-            <div className="bg-electric-blue/10 border border-electric-blue/20 p-8 rounded-3xl my-12">
-              <h4 className="text-2xl font-bold mb-4 text-white">Ready to dominate your local market?</h4>
-              <p className="text-text-secondary mb-6">
-                Don't let another day go by while your competitors take your potential customers. Let's build a website that actually grows your business.
+            <div className="bg-white border border-medium-teal/10 p-10 rounded-[2.5rem] my-12 shadow-2xl text-center">
+              <h4 className="text-3xl font-bold mb-4 text-primary-dark">Reserve Your Free Build Slot</h4>
+              <p className="text-primary-dark/60 mb-8 font-medium">
+                We only accept 5 new build-first requests per week to maintain our high quality standards. Reserve yours today for R0.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-electric-blue text-black px-8 py-4 rounded-full font-bold text-center hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link 
+                  to="/checkout"
+                  className="bg-medium-teal text-white px-10 h-[56px] flex items-center justify-center rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
                 >
-                  Chat on WhatsApp
-                </a>
+                  Reserve Slot (R0)
+                </Link>
                 <Link 
                   to="/"
-                  className="bg-white/5 text-white border border-white/10 px-8 py-4 rounded-full font-bold text-center hover:bg-white/10 active:scale-95 transition-all cursor-pointer"
+                  className="bg-transparent text-primary-dark border-2 border-primary-dark/20 px-10 h-[56px] flex items-center justify-center rounded-xl font-bold hover:bg-primary-dark/5 transition-all cursor-pointer"
                 >
                   Back to Home
                 </Link>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-white">Frequently Asked Questions About Our Web Design</h3>
+            <h3 className="text-2xl font-bold mb-4 text-primary-dark">Frequently Asked Questions About Our Web Design</h3>
             <div className="space-y-6 mb-12">
-              <div>
-                <h5 className="font-bold text-electric-blue mb-2">How long does it take?</h5>
-                <p className="text-text-secondary text-sm">Once we have your content, we can have your site live in 48 hours. We value speed because we know time is money.</p>
+              <div className="border-b border-medium-teal/5 pb-6 last:border-0">
+                <h5 className="font-bold text-medium-teal mb-2">How long does it take?</h5>
+                <p className="text-primary-dark/50 text-sm font-medium">Once we have your content, we can have your site live in 48 hours. We value speed because we know time is money.</p>
               </div>
-              <div>
-                <h5 className="font-bold text-electric-blue mb-2">What do I need to provide?</h5>
-                <p className="text-text-secondary text-sm">We'll need your logo (if you have one), your business details, and a brief description of your services. We can help with the rest!</p>
+              <div className="border-b border-medium-teal/5 pb-6 last:border-0">
+                <h5 className="font-bold text-medium-teal mb-2">What do I need to provide?</h5>
+                <p className="text-primary-dark/50 text-sm font-medium">We'll need your logo (if you have one), your business details, and a brief description of your services. We can help with the rest!</p>
               </div>
-              <div>
-                <h5 className="font-bold text-electric-blue mb-2">Is the R300/month mandatory?</h5>
-                <p className="text-text-secondary text-sm">Yes, this covers your high-speed hosting, security, backups, and ongoing support. It ensures your site stays healthy and fast.</p>
+              <div className="border-b border-medium-teal/5 pb-6 last:border-0">
+                <h5 className="font-bold text-medium-teal mb-2">Is the R299/month mandatory?</h5>
+                <p className="text-primary-dark/50 text-sm font-medium">Yes, this covers your high-speed hosting, security, backups, and ongoing support. It ensures your site stays healthy and fast.</p>
               </div>
             </div>
           </div>

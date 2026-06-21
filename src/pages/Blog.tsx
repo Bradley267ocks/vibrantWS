@@ -9,7 +9,7 @@ import { blogPosts } from '../blog/posts';
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-sans selection:bg-electric-blue selection:text-black">
+    <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
       <Helmet>
         <title>Business Growth Blog | Web Design & SEO Tips South Africa</title>
         <meta name="description" content="Expert insights on website design, local SEO, Google Maps ranking, and digital marketing strategies for South African entrepreneurs." />
@@ -22,11 +22,11 @@ const Blog = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-6 text-white"
+              className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-6 text-primary-dark"
             >
-              Vibrant <span className="text-electric-blue">Insights</span>
+              Vibrant <span className="text-medium-teal italic">Insights</span>
             </motion.h1>
-            <p className="text-text-secondary max-w-2xl mx-auto text-lg">
+            <p className="text-primary-dark/70 max-w-2xl mx-auto text-lg font-medium">
               Expert advice on web design, digital marketing, and business growth for South African entrepreneurs.
             </p>
           </div>
@@ -38,9 +38,9 @@ const Blog = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group flex flex-col bg-dark-secondary border border-white/10 rounded-3xl overflow-hidden hover:border-electric-blue/30 transition-all shadow-sm"
+                className="group flex flex-col bg-white border border-medium-teal/10 rounded-3xl overflow-hidden hover:border-accent-green/30 transition-all shadow-sm hover:shadow-xl"
               >
-                <Link to={`/blog/${post.id}`} className="bg-dark-primary flex items-center justify-center overflow-hidden h-48 border-b border-white/5 cursor-pointer">
+                <Link to={`/blog/${post.id}`} className="bg-light-bg/50 flex items-center justify-center overflow-hidden h-48 border-b border-medium-teal/5 cursor-pointer">
                   <img 
                     src={post.image} 
                     alt={post.title} 
@@ -49,19 +49,19 @@ const Blog = () => {
                   />
                 </Link>
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-xs text-text-secondary mb-4 uppercase tracking-widest font-bold">
-                    <span className="flex items-center gap-1"><Tag size={12} className="text-electric-blue" /> {post.category}</span>
+                  <div className="flex items-center gap-4 text-[10px] text-primary-dark/30 mb-4 uppercase tracking-widest font-black">
+                    <span className="flex items-center gap-1"><Tag size={12} className="text-medium-teal" /> {post.category}</span>
                     <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 group-hover:text-electric-blue transition-colors leading-tight text-white cursor-pointer transition-colors">
+                  <h2 className="text-2xl font-bold mb-4 group-hover:text-medium-teal transition-colors leading-tight text-primary-dark cursor-pointer">
                     <Link to={`/blog/${post.id}`}>{post.title}</Link>
                   </h2>
-                  <p className="text-text-secondary text-sm mb-6 flex-grow leading-relaxed">
+                  <p className="text-primary-dark/60 text-sm mb-6 flex-grow leading-relaxed font-medium">
                     {post.excerpt}
                   </p>
                   <Link 
                     to={`/blog/${post.id}`}
-                    className="inline-flex items-center gap-2 text-electric-blue font-bold text-sm hover:gap-3 transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 text-medium-teal font-bold text-sm hover:gap-3 transition-all cursor-pointer"
                   >
                     Read More <ArrowRight size={16} />
                   </Link>

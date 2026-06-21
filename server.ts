@@ -3,8 +3,29 @@ import { createServer as createViteServer } from "vite";
 import path from "path";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import md5 from "md5";
 
 dotenv.config();
+
+// PayFast Signature Helper
+function generatePayFastSignature(data: any, passphrase?: string) {
+  let paramString = "";
+  // The variables must be in the order they are sent in the form
+  const keys = Object.keys(data);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    if (data[key] !== "") {
+      paramString += `${key}=${encodeURIComponent(data[key].toString().trim()).replace(/%20/g, "+")}&`;
+    }
+  }
+
+  paramString = paramString.slice(0, -1);
+  if (passphrase) {
+    paramString += `&passphrase=${encodeURIComponent(passphrase.trim()).replace(/%20/g, "+")}`;
+  }
+
+  return md5(paramString);
+}
 
 async function startServer() {
   const app = express();
@@ -19,6 +40,66 @@ async function startServer() {
       smtpConfigured: !!process.env.SMTP_PASS,
       smtpUser: process.env.SMTP_USER || "help@vibrantws.co.za"
     });
+  });
+
+  // PayFast Initiation Route
+  app.post("/api/payfast/initiate", (req, res) => {
+    const { name, email, amount, itemName, isSubscription } = req.body;
+
+    const merchantId = process.env.PAYFAST_MERCHANT_ID;
+    const merchantKey = process.env.PAYFAST_MERCHANT_KEY;
+    const passphrase = process.env.PAYFAST_PASSPHRASE;
+    const env = process.env.PAYFAST_ENV || "sandbox";
+
+    if (!merchantId || !merchantKey) {
+      return res.status(500).json({ error: "PayFast configuration missing on server." });
+    }
+
+    const baseUrl = env === "live" 
+      ? "https://www.payfast.co.za/eng/process" 
+      : "https://sandbox.payfast.co.za/eng/process";
+
+    const host = req.headers.host;
+    const protocol = req.secure ? "https" : "http";
+    const siteUrl = `${protocol}://${host}`;
+
+    // Prepare data in specific order required by PayFast for signature
+    const data: any = {
+      merchant_id: merchantId,
+      merchant_key: merchantKey,
+      return_url: `${siteUrl}/payment-success`,
+      cancel_url: `${siteUrl}/payment-cancel`,
+      notify_url: `${siteUrl}/api/payfast/notify`,
+      name_first: name.split(" ")[0] || "Client",
+      name_last: name.split(" ").slice(1).join(" ") || "User",
+      email_address: email,
+      m_payment_id: `vibrant_${Date.now()}`,
+      amount: parseFloat(amount).toFixed(2),
+      item_name: itemName || "Web Solution Subscription",
+    };
+
+    if (isSubscription) {
+      data.subscription_type = "1";
+      data.billing_date = new Date().toISOString().split("T")[0];
+      data.recurring_amount = parseFloat(amount).toFixed(2);
+      data.frequency = "3"; // Monthly
+      data.cycles = "0"; // Infinite 
+    }
+
+    const signature = generatePayFastSignature(data, passphrase);
+    data.signature = signature;
+
+    res.json({
+      url: baseUrl,
+      fields: data
+    });
+  });
+
+  // PayFast ITN Notify Route (Placeholder for handling payment confirmation)
+  app.post("/api/payfast/notify", (req, res) => {
+    console.log("PayFast ITN Received:", req.body);
+    // In a real app, you'd verify the signature here and update your DB
+    res.status(200).send("OK");
   });
 
   // API Contact Route

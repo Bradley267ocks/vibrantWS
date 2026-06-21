@@ -30,7 +30,7 @@ export const seoPagesData = {
         ]
       },
       faq: [
-        { q: "How much does a web designer in Cape Town cost?", a: "Our packages start from just R1000 once-off for a high-performance starter site, plus R300/month for premium local hosting." },
+        { q: "How much does a web designer in Cape Town cost?", a: "To reserve your build slot, you pay a once-off R0 booking fee. If you love the custom preview website we build for you, you then subscribe for just R299/month with no upfront design costs." },
         { q: "Can you help rank my business on Google Maps in Cape Town?", a: "Yes! Our Business and Pro packages include full Google Business Profile (GBP) optimization specifically for the Cape Town region to boost your visibility." },
         { q: "How long does it take to build a website in Cape Town?", a: "We offer a 48-hour turnaround for our standard packages once we have received your business information and assets." }
       ]
@@ -105,20 +105,20 @@ export const seoPagesData = {
     }
   },
   "affordable-websites-south-africa": {
-    title: "Affordable Website Design South Africa | Quality Web Design from R1000",
-    metaDescription: "Get an affordable website in South Africa without sacrificing quality. High-performance sites starting from R1000 once-off. Mobile-ready and SEO-optimized.",
+    title: "Affordable Website Design South Africa | Quality Web Design from R299/mo",
+    metaDescription: "Get an affordable website in South Africa without sacrificing quality. High-performance sites starting from just R299/month. Pay after you see the preview.",
     headline: "Affordable Website Design South Africa: Quality Meets Value",
     subheadline: "Every South African business deserves a professional online presence. We offer world-class web design at prices that small businesses can actually afford.",
     location: "South Africa",
     content: {
       section1: {
         title: "Empowering SA Small Businesses",
-        body: `At Vibrant Web Solutions, our mission is to make the digital economy accessible to every entrepreneur in South Africa. We've seen too many businesses held back by expensive agencies. That's why we've redesigned our entire workflow to offer truly affordable website design in South Africa.
+        body: `At Vibrant Web Solutions, our mission is to make the digital economy accessible to every entrepreneur in South Africa. We've seen too many businesses held back by expensive agencies. That's why we've redesigned our entire workflow to offer truly affordable website design in South Africa with our "Build Before You Pay" model.
 
         Affordable doesn't mean cheap. Our sites are built on the same high-performance architecture used by top brands. We use cutting-edge frameworks (like React and Tailwind) to ensure your site is fast, secure, and ready to compete in the national market.
 
         The Digital Divide in South Africa:
-        Many SA business owners think they can't afford a 'proper' website. They end up with slow, broken sites or just a Facebook page. This hurts their credibility. We solve this by offering professional sites from R1000 once-off. This includes everything you need to start getting customers: mobile design, contact forms, and basic SEO.
+        Many SA business owners think they can't afford a 'proper' website. They end up with slow, broken sites or just a Facebook page. This hurts their credibility. We solve this by offering professional sites with no upfront design costs. You only pay a R0 booking fee to see a preview of your site before committing to a R299/month subscription.
 
         We believe that when local businesses grow, the South African economy grows. Our goal is to be the partner that helps you take that first step online.`
       },
@@ -126,14 +126,14 @@ export const seoPagesData = {
         title: "Why Our Affordable Model Works",
         items: [
           { title: "No Corporate Overhead", desc: "We've removed the expensive agency fluff to focus strictly on what brings you real customers." },
-          { title: "Subscription Support", desc: "A low monthly fee (R300) ensures your site is always updated, secure, and supported by a real human." },
+          { title: "Subscription Support", desc: "A low monthly fee (R299) ensures your site is always updated, secure, and supported by a real human." },
           { title: "Growth Ready Plans", desc: "Start with a single page and add more features, services, or a blog as your SA business expands." },
           { title: "South African Pride", desc: "We are local and understand the unique challenges and opportunities in the SA market." }
         ]
       },
       faq: [
-        { q: "What is inclusive in the R1000 package?", a: "A professional 1-page mobile-responsive design, basic SEO, and direct WhatsApp integration." },
-        { q: "Is the R300/month mandatory?", a: "Yes, it covers your high-speed hosting, security, and ongoing technical support to keep your site running." },
+        { q: "What is inclusive in the R299 package?", a: "A professional mobile-responsive design, high-speed hosting, security, and direct WhatsApp integration." },
+        { q: "Is the R299/month mandatory?", a: "Yes, it covers your high-speed hosting, security, and ongoing technical support to keep your site running." },
         { q: "Can I upgrade my plan later?", a: "Absolutely. Most clients start with a Starter and move to a Business plan as they generate more leads." }
       ]
     }

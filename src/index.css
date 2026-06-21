@@ -1,30 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Poppins", sans-serif;
-  --color-electric-blue: #00C2FF;
-  --color-neon-green: #00FFA3;
-  --color-dark-primary: #0B0F19;
-  --color-dark-secondary: #121826;
-  --color-text-secondary: #A0AEC0;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* NEW PROFESSIONAL COLOR PALETTE */
+  --color-light-bg: #F5FFF7;
+  --color-secondary-bg: #EAFBF0;
+  --color-primary-dark: #051F20;
+  --color-secondary-dark: #163832;
+  --color-medium-teal: #2D7A5E;
+  --color-dark-teal: #235347;
+  --color-accent-green: #8EB69B;
+  --color-card-bg: #FFFFFF;
 }
 
 @layer base {
   body {
-    @apply bg-dark-primary text-white selection:bg-electric-blue selection:text-black;
+    @apply bg-light-bg text-primary-dark selection:bg-accent-green selection:text-primary-dark leading-relaxed;
+    font-size: 16px;
+  }
+
+  h1 { @apply font-display font-black tracking-tight text-primary-dark leading-[1.2]; font-size: 36px; }
+  h2 { @apply font-display font-bold text-primary-dark leading-[1.3]; font-size: 28px; }
+  h3 { @apply font-display font-bold text-primary-dark leading-[1.4]; font-size: 22px; }
+
+  @media (min-width: 1024px) {
+    body { font-size: 18px; }
+    h1 { font-size: 64px; }
+    h2 { font-size: 48px; }
+    h3 { font-size: 32px; }
   }
 }
 
 .brutal-border {
-  @apply border-2 border-white/10;
+  @apply border border-medium-teal/10;
 }
 
-.neon-glow {
-  text-shadow: 0 0 10px rgba(0, 194, 255, 0.5);
+.nav-blur {
+  @apply bg-primary-dark shadow-lg border-b border-medium-teal/20;
 }
 
-.neon-bg-glow {
-  box-shadow: 0 0 20px rgba(0, 194, 255, 0.2);
+.glass-morphism {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply bg-medium-teal text-light-bg px-8 py-4 rounded-xl font-bold transition-all hover:bg-dark-teal active:scale-95 shadow-lg shadow-medium-teal/10 flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-transparent border-2 border-primary-dark/10 text-primary-dark px-8 py-4 rounded-xl font-bold transition-all hover:bg-primary-dark/5 active:scale-95 flex items-center justify-center gap-2;
 }

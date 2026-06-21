@@ -18,7 +18,7 @@ const BlogPost = () => {
   const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%20just%20read%20your%20blog%20post%20about%20" + encodeURIComponent(post.title);
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white font-sans selection:bg-electric-blue selection:text-black">
+    <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
       <Helmet>
         <title>{post.title} | Vibrant Web Solutions Blog</title>
         <meta name="description" content={post.excerpt} />
@@ -33,7 +33,7 @@ const BlogPost = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             to="/blog"
-            className="inline-flex items-center gap-2 text-text-secondary hover:text-electric-blue transition-colors mb-8 font-bold text-sm uppercase tracking-widest cursor-pointer group"
+            className="inline-flex items-center gap-2 text-primary-dark/40 hover:text-medium-teal transition-colors mb-8 font-bold text-xs uppercase tracking-widest cursor-pointer group"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Blog
           </Link>
@@ -42,27 +42,27 @@ const BlogPost = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className="flex items-center gap-4 text-sm text-text-secondary mb-6 uppercase tracking-widest font-bold">
-              <span className="flex items-center gap-2 bg-dark-secondary px-3 py-1 rounded-full border border-white/10"><Tag size={14} className="text-electric-blue" /> {post.category}</span>
+            <div className="flex items-center gap-4 text-[10px] text-primary-dark/30 mb-6 uppercase tracking-widest font-black">
+              <span className="flex items-center gap-2 bg-white px-3 py-1 rounded-full border border-medium-teal/10"><Tag size={14} className="text-medium-teal" /> {post.category}</span>
               <span className="flex items-center gap-2"><Calendar size={14} /> {post.date}</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-8 leading-tight text-white">
+            <h1 className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-8 leading-tight text-primary-dark">
               {post.title}
             </h1>
 
-            <div className="flex items-center gap-4 mb-12 p-4 border-y border-white/10">
-              <div className="w-10 h-10 bg-electric-blue rounded-full flex items-center justify-center text-black font-black">
+            <div className="flex items-center gap-4 mb-12 p-4 border-y border-medium-teal/10">
+              <div className="w-10 h-10 bg-medium-teal rounded-full flex items-center justify-center text-light-bg font-black">
                 V
               </div>
               <div>
-                <p className="text-sm font-bold text-white">{post.author}</p>
-                <p className="text-xs text-text-secondary">Expert Web Strategist</p>
+                <p className="text-sm font-bold text-primary-dark">{post.author}</p>
+                <p className="text-xs text-primary-dark/40 font-bold uppercase tracking-widest">Expert Web Strategist</p>
               </div>
             </div>
           </motion.div>
 
-          <div className="rounded-3xl overflow-hidden mb-12 border border-white/10 bg-dark-secondary">
+          <div className="rounded-3xl overflow-hidden mb-12 border border-medium-teal/10 bg-white shadow-xl">
             <img 
               src={post.image} 
               alt={post.title} 
@@ -72,13 +72,13 @@ const BlogPost = () => {
           </div>
 
           <div 
-            className="prose prose-invert prose-neon max-w-none mb-16 blog-content"
+            className="prose prose-slate max-w-none mb-16 blog-content font-medium text-primary-dark/70"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          <div className="bg-dark-secondary rounded-[2.5rem] p-8 md:p-12 border border-white/10 text-center">
-            <h2 className="text-3xl font-display font-bold mb-4 text-white">Ready to grow your business?</h2>
-            <p className="text-text-secondary mb-8 max-w-xl mx-auto">
+          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-medium-teal/10 text-center shadow-2xl">
+            <h2 className="text-3xl font-display font-bold mb-4 text-primary-dark">Ready to grow your business?</h2>
+            <p className="text-primary-dark/60 font-medium mb-8 max-w-xl mx-auto">
               We've helped hundreds of South African businesses get online and attract more customers. Let's do the same for you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -86,14 +86,14 @@ const BlogPost = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-lg"
+                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10"
               >
                 <MessageCircle size={20} />
                 Chat on WhatsApp
               </a>
               <Link 
                 to="/get-started"
-                className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 active:scale-95 transition-all text-center cursor-pointer"
+                className="w-full sm:w-auto h-[50px] bg-transparent border-2 border-medium-teal text-medium-teal px-8 rounded-[10px] font-semibold hover:bg-medium-teal/5 transition-all flex items-center justify-center cursor-pointer"
               >
                 Get Started
               </Link>

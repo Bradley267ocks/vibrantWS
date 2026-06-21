@@ -11,7 +11,8 @@ import {
   Clock,
   Palette,
   Facebook,
-  MapPin
+  MapPin,
+  Globe
 } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -36,28 +37,28 @@ const ThankYouPage = () => {
     {
       title: "Logo Design",
       price: "R500",
-      icon: <Palette className="text-neon-green" size={24} />,
+      icon: <Palette className="text-primary" size={24} />,
       description: "Professional, custom logo design to make your brand stand out.",
       whatsappText: "Hi, I want to add Logo Design for R500 once-off"
     },
     {
       title: "Facebook Marketing",
       price: "R1500",
-      icon: <Facebook className="text-neon-green" size={24} />,
+      icon: <Facebook className="text-primary" size={24} />,
       description: "Reach thousands of local customers with targeted Facebook ads.",
       whatsappText: "Hi, I want to add Facebook Marketing for R1500/month"
     },
     {
       title: "Google Business",
       price: "R1000",
-      icon: <MapPin className="text-neon-green" size={24} />,
+      icon: <MapPin className="text-primary" size={24} />,
       description: "Get found on Google Maps and dominate local search results.",
       whatsappText: "Hi, I want to add Google Business Management for R1000/month"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-neon-green selection:text-black">
+    <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
       <Navbar />
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 text-center">
@@ -67,14 +68,33 @@ const ThankYouPage = () => {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tighter mb-6">
-            Thank You! 🎉
+          <div className="w-20 h-20 bg-accent-green/20 rounded-full flex items-center justify-center mx-auto mb-8">
+            <CheckCircle2 className="text-medium-teal w-10 h-10" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tighter mb-6 text-primary-dark">
+            Build Slot <span className="text-medium-teal italic">Reserved!</span>
           </h1>
-          <p className="text-xl text-zinc-400 mb-4">
-            Your request has been received. We’ll contact you shortly.
+          <p className="text-xl text-primary-dark/70 font-medium mb-12 max-w-2xl mx-auto">
+            Your free build slot has been reserved. Our experts are starting your custom authority website preview right now.
           </p>
-          <p className="text-lg text-gold font-bold">
-            While you wait, take your business to the next level with automation that works for you 24/7.
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto mb-16">
+            <div className="p-6 bg-white border border-medium-teal/10 rounded-2xl shadow-sm">
+              <h4 className="font-bold text-primary-dark mb-2 flex items-center gap-2">
+                <Clock className="w-4 h-4 text-medium-teal" /> What's Next?
+              </h4>
+              <p className="text-sm text-primary-dark/60">We'll review your requirements and reach out via WhatsApp if we need any clarity on your business goals.</p>
+            </div>
+            <div className="p-6 bg-white border border-medium-teal/10 rounded-2xl shadow-sm">
+              <h4 className="font-bold text-primary-dark mb-2 flex items-center gap-2">
+                <Globe className="w-4 h-4 text-medium-teal" /> Preview Link
+              </h4>
+              <p className="text-sm text-primary-dark/60">Expect a private link to your website preview in 5-7 business days. You only pay for the R299/mo subscription if you love it.</p>
+            </div>
+          </div>
+          
+          <p className="text-sm text-medium-teal font-black uppercase tracking-widest bg-medium-teal/5 py-4 px-8 rounded-full border border-medium-teal/10 inline-block">
+            While we build your site, explore our high-growth add-ons:
           </p>
         </motion.div>
       </section>
@@ -86,30 +106,30 @@ const ThankYouPage = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="relative p-8 md:p-12 rounded-[3rem] bg-zinc-900 border-2 border-neon-green shadow-[0_0_50px_rgba(0,255,0,0.15)] overflow-hidden"
+            className="relative p-8 md:p-12 rounded-[3.5rem] bg-white border-2 border-primary-dark shadow-2xl overflow-hidden"
           >
-            {/* Gold/Green Accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-neon-green/10 blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+            {/* Accent */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-green/5 blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
                 <div>
-                  <span className="inline-block px-4 py-1 mb-4 text-xs font-black uppercase tracking-widest bg-neon-green text-black rounded-full">
+                  <span className="inline-block px-4 py-1 mb-4 text-[10px] font-black uppercase tracking-widest bg-primary-dark text-accent-green rounded-full">
                     🔥 Most Popular
                   </span>
-                  <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter">
+                  <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-primary-dark">
                     AI Agent Automation
                   </h2>
                 </div>
                 <div className="text-left md:text-right">
-                  <span className="text-5xl md:text-7xl font-display font-black text-gold">R2500</span>
-                  <p className="text-zinc-500 font-bold uppercase tracking-widest text-sm">per month</p>
+                  <span className="text-5xl md:text-7xl font-display font-black text-medium-teal">R2500</span>
+                  <p className="text-primary-dark/40 font-black uppercase tracking-widest text-xs">per month</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                 <div>
-                  <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
+                  <p className="text-xl text-primary-dark/70 mb-8 leading-relaxed font-medium">
                     Let your business run on autopilot with an AI system that works for you 24/7.
                   </p>
                   <ul className="space-y-4">
@@ -120,30 +140,30 @@ const ThankYouPage = () => {
                       { icon: <Calendar size={20} />, text: "Keeps your calendar full" },
                       { icon: <Clock size={20} />, text: "Works for you 24/7" }
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-4 text-zinc-300">
-                        <div className="text-neon-green">{item.icon}</div>
-                        <span className="font-medium">{item.text}</span>
+                      <li key={i} className="flex items-center gap-4 text-primary-dark/70 font-bold">
+                        <div className="text-medium-teal">{item.icon}</div>
+                        <span className="font-bold">{item.text}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="bg-zinc-950/50 p-8 rounded-3xl border border-white/5">
-                  <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
-                    <CheckCircle2 className="text-neon-green" />
+                <div className="bg-light-bg p-8 rounded-3xl border border-medium-teal/10">
+                  <h4 className="text-lg font-black mb-6 flex items-center gap-2 text-primary-dark">
+                    <CheckCircle2 className="text-medium-teal" />
                     Why Choose Automation?
                   </h4>
                   <div className="space-y-6">
                     <div className="flex gap-4">
-                      <div className="w-1.5 h-1.5 rounded-full bg-neon-green mt-2"></div>
-                      <p className="text-zinc-400 text-sm"><span className="text-white font-bold">Trusted system</span> used by top local businesses.</p>
+                      <div className="w-2 h-2 rounded-full bg-medium-teal mt-1.5"></div>
+                      <p className="text-primary-dark/60 font-medium text-sm"><span className="text-primary-dark font-bold">Trusted system</span> used by top local businesses.</p>
                     </div>
                     <div className="flex gap-4">
-                      <div className="w-1.5 h-1.5 rounded-full bg-neon-green mt-2"></div>
-                      <p className="text-zinc-400 text-sm"><span className="text-white font-bold">Saves 20+ hours</span> of manual work every week.</p>
+                      <div className="w-2 h-2 rounded-full bg-medium-teal mt-1.5"></div>
+                      <p className="text-primary-dark/60 font-medium text-sm"><span className="text-primary-dark font-bold">Saves 20+ hours</span> of manual work every week.</p>
                     </div>
                     <div className="flex gap-4">
-                      <div className="w-1.5 h-1.5 rounded-full bg-neon-green mt-2"></div>
-                      <p className="text-zinc-400 text-sm"><span className="text-white font-bold">Increases leads</span> by engaging visitors instantly.</p>
+                      <div className="w-2 h-2 rounded-full bg-medium-teal mt-1.5"></div>
+                      <p className="text-primary-dark/60 font-medium text-sm"><span className="text-primary-dark font-bold">Increases leads</span> by engaging visitors instantly.</p>
                     </div>
                   </div>
                 </div>
@@ -153,7 +173,7 @@ const ThankYouPage = () => {
                 href={`${WHATSAPP_BASE_URL}?text=Hi%2C%20I%20want%20the%20AI%20automation%20system%20for%20R2500/month`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-neon-green text-black font-black py-6 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 text-2xl shadow-[0_10px_30px_rgba(0,255,0,0.2)]"
+                className="w-full h-[70px] bg-medium-teal text-light-bg font-bold rounded-2xl hover:bg-dark-teal transition-all flex items-center justify-center gap-3 text-2xl shadow-xl"
               >
                 <WhatsAppIcon size={28} />
                 Activate My AI System
@@ -165,11 +185,11 @@ const ThankYouPage = () => {
       </section>
 
       {/* Upsells Section */}
-      <section className="py-24 px-4 bg-zinc-900/30">
+      <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Complete Your Brand</h2>
-            <p className="text-zinc-400">Add these powerful tools to your package for maximum impact.</p>
+            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter mb-4 text-primary-dark">Complete Your Brand</h2>
+            <p className="text-primary-dark/60 font-medium">Add these powerful tools to your package for maximum impact.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -177,21 +197,21 @@ const ThankYouPage = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
-                className="p-8 rounded-3xl bg-zinc-950 border border-white/5 hover:border-neon-green/30 transition-all flex flex-col"
+                className="p-8 rounded-3xl bg-light-bg border border-medium-teal/10 hover:border-accent-green/30 transition-all flex flex-col shadow-sm hover:shadow-xl"
               >
-                <div className="mb-6 p-4 bg-zinc-900 rounded-2xl w-fit">
+                <div className="mb-6 p-4 bg-white rounded-2xl w-fit shadow-sm">
                   {upsell.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{upsell.title}</h3>
-                <div className="text-3xl font-display font-bold text-gold mb-4">{upsell.price}</div>
-                <p className="text-zinc-400 mb-8 flex-grow leading-relaxed">
+                <h3 className="text-2xl font-bold mb-2 text-primary-dark">{upsell.title}</h3>
+                <div className="text-3xl font-display font-black text-medium-teal mb-4">{upsell.price}</div>
+                <p className="text-primary-dark/70 font-medium mb-8 flex-grow leading-relaxed">
                   {upsell.description}
                 </p>
                 <a 
                   href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent(upsell.whatsappText)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-4 rounded-xl bg-white/5 text-white font-bold hover:bg-neon-green hover:text-black transition-all text-center flex items-center justify-center gap-2"
+                  className="w-full h-[50px] rounded-[10px] bg-primary-dark text-light-bg font-semibold uppercase tracking-widest text-[10px] transition-all text-center flex items-center justify-center gap-2 hover:bg-medium-teal"
                 >
                   <WhatsAppIcon size={18} />
                   Add to My Package

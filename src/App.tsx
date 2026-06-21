@@ -43,49 +43,52 @@ import WhatsAppContact from './pages/WhatsAppContact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import LocalSEOPage from './pages/LocalSEOPage';
+import Checkout from './pages/Checkout';
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentCancel from './pages/PaymentCancel';
 import { seoPagesData } from './data/seoContent';
 
 const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
 
 const AgencyCredentials = () => (
-  <div className="bg-dark-secondary py-10 border-y border-white/5">
+  <div className="bg-light-bg py-12 border-y border-medium-teal/10">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p className="text-center text-xs font-bold uppercase tracking-widest text-text-secondary mb-8">Dominating Local SEO in South Africa</p>
-      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 transition-all">
-        <div className="flex items-center gap-2"><Globe className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">Google Search Authority</span></div>
-        <div className="flex items-center gap-2"><Smartphone className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">100% Core Web Vitals</span></div>
-        <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">Secure Data Protection</span></div>
-        <div className="flex items-center gap-2"><Zap className="w-5 h-5 text-electric-blue" /> <span className="font-display font-bold text-white">Fast-Loading Agency</span></div>
+      <p className="text-center text-xs font-black uppercase tracking-[0.3em] text-secondary-dark/60 mb-10">Dominating Local SEO in South Africa</p>
+      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 transition-all">
+        <div className="flex items-center gap-2"><Globe className="w-5 h-5 text-medium-teal" /> <span className="font-display font-bold text-primary-dark">Google Search Authority</span></div>
+        <div className="flex items-center gap-2"><Smartphone className="w-5 h-5 text-medium-teal" /> <span className="font-display font-bold text-primary-dark">100% Core Web Vitals</span></div>
+        <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-medium-teal" /> <span className="font-display font-bold text-primary-dark">Secure Data Protection</span></div>
+        <div className="flex items-center gap-2"><Zap className="w-5 h-5 text-medium-teal" /> <span className="font-display font-bold text-primary-dark">Fast-Loading Agency</span></div>
       </div>
     </div>
   </div>
 );
 
 const AboutEEAT = () => (
-  <section className="py-24 bg-dark-secondary relative overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section className="py-24 bg-light-bg relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-primary-dark">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
-          <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10">
+          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
              <img 
                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=max&q=80" 
                alt="Vibrant Web Solutions Team" 
                className="w-full h-auto object-contain block"
              />
-             <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/60 via-transparent to-transparent pointer-events-none"></div>
-             <div className="absolute bottom-8 left-8">
-               <p className="text-electric-blue font-black text-4xl mb-2">5+</p>
-               <p className="text-white font-bold uppercase tracking-widest text-xs">Years of Growth Expertise</p>
+             <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/20 via-transparent to-transparent pointer-events-none"></div>
+             <div className="absolute bottom-8 left-8 text-white">
+               <p className="font-black text-4xl mb-2 drop-shadow-md">5+</p>
+               <p className="font-bold uppercase tracking-widest text-xs drop-shadow-md">Years of Growth Expertise</p>
              </div>
           </div>
-          <div className="absolute -top-6 -right-6 w-32 h-32 bg-electric-blue/20 blur-3xl -z-10"></div>
+          <div className="absolute -top-6 -right-6 w-32 h-32 bg-medium-teal/10 blur-3xl -z-10"></div>
         </div>
-        <div>
-          <span className="text-neon-green text-xs font-black uppercase tracking-[0.2em] mb-4 block">Authority & Expertise</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-white tracking-tighter">
-            Empowering South African Businesses to <span className="text-electric-blue">Dominate Digitally</span>
+        <div className="pr-4">
+          <span className="text-medium-teal text-xs font-black uppercase tracking-[0.2em] mb-4 block">Authority & Expertise</span>
+          <h2 className="mb-8">
+            Empowering South African Businesses to <span className="text-medium-teal italic">Dominate Digitally</span>
           </h2>
-          <div className="space-y-6 text-text-secondary leading-relaxed">
+          <div className="space-y-6 text-primary-dark/80 leading-relaxed font-medium">
             <p>
               Vibrant Web Solutions was born from a simple mission: to bridge the gap between high-level digital performance and South African small business affordability. We don't just build websites; we engineer sales systems.
             </p>
@@ -94,11 +97,11 @@ const AboutEEAT = () => (
             </p>
             <div className="grid grid-cols-2 gap-8 pt-6">
               <div>
-                <h4 className="text-white font-bold mb-2">Our Mission</h4>
+                <h4 className="font-bold mb-2 text-primary-dark">Our Mission</h4>
                 <p className="text-sm">To provide every local entrepreneur with the digital tools needed to compete with national brands.</p>
               </div>
               <div>
-                <h4 className="text-white font-bold mb-2">Our Vision</h4>
+                <h4 className="font-bold mb-2 text-primary-dark">Our Vision</h4>
                 <p className="text-sm">To become the leading catalyst for small business growth in the Western Cape and beyond.</p>
               </div>
             </div>
@@ -110,11 +113,11 @@ const AboutEEAT = () => (
 );
 
 const AreasServed = () => (
-  <section className="py-24 bg-dark-primary border-t border-white/5">
+  <section id="areas-served" className="py-24 bg-light-bg border-t border-medium-teal/10">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">Local Areas We Support</h2>
-        <p className="text-text-secondary">Providing dominant digital presence across the Western Cape and South Africa.</p>
+        <h2 className="mb-4 text-primary-dark">Local Areas We Support</h2>
+        <p className="text-primary-dark/70 font-medium">Providing dominant digital presence across the Western Cape and South Africa.</p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
         {[
@@ -127,7 +130,7 @@ const AreasServed = () => (
             href={`https://wa.me/27645192556?text=Hi%2C%20I%20need%20a%20website%20in%20${encodeURIComponent(area)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 rounded-xl bg-dark-secondary border border-white/10 text-sm font-bold text-text-secondary hover:text-electric-blue hover:border-electric-blue/30 hover:scale-105 active:scale-95 transition-all cursor-pointer block"
+            className="p-4 rounded-xl bg-white border border-medium-teal/10 text-sm font-bold text-primary-dark/60 hover:text-accent-green hover:border-accent-green/30 hover:scale-105 active:scale-95 transition-all cursor-pointer block shadow-sm"
           >
             {area}
           </a>
@@ -152,7 +155,8 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-light-bg">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#8EB69B08_0%,transparent_70%)]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <motion.div
@@ -160,32 +164,52 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase bg-dark-secondary border border-white/10 rounded-full text-neon-green">
-              Expert Web Designer Cape Town & Langebaan
+            <span className="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.2em] uppercase bg-primary-dark text-accent-green rounded-full shadow-sm">
+              Premium Web Design & Local SEO Agency
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tighter leading-[0.9] mb-8 text-white">
-              Professional <span className="text-electric-blue">Website Design</span> Agency in South Africa
+            <h1 className="mb-10 text-primary-dark">
+              See Your New Website <span className="text-medium-teal italic">Before You Pay</span>
             </h1>
-            <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
-              We specialize in local SEO and high-converting website design for businesses in Cape Town, Langebaan, and nationwide. Dominate your market from R300/month.
+            <p className="text-secondary-dark/80 mb-10 max-w-2xl mx-auto font-medium">
+              We build your website first and send you a private preview link. If you love it, keep it for only R299 per month. Reserve your build slot today for R0.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link 
-                to="/get-my-website"
-                className="w-full sm:w-auto bg-electric-blue text-black px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all group cursor-pointer"
+                to="/checkout"
+                className="w-full sm:w-auto bg-medium-teal text-light-bg h-[50px] min-w-[200px] px-8 rounded-[10px] font-semibold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 hover:bg-dark-teal transition-all group cursor-pointer shadow-lg"
               >
-                Get My Website
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                Start My Free Build Preview
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <div className="flex items-center gap-3 px-6 h-[50px] rounded-[10px] bg-white border border-medium-teal/10">
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary-dark/60">Free Reservation</span>
+              </div>
+            </div>
+
+            {/* Quick Links Section requested by user */}
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 mt-12 pt-12 border-t border-medium-teal/10">
+              <Link to="/blog" className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-dark/40 hover:text-accent-green transition-colors flex items-center gap-2">
+                <Globe size={14} /> Success Blog
               </Link>
               <a 
-                href="#services"
+                href="#portfolio" 
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="w-full sm:w-auto bg-dark-secondary border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 active:scale-95 transition-all text-center cursor-pointer"
+                  document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-dark/40 hover:text-accent-green transition-colors flex items-center gap-2"
               >
-                View Services
+                <Layout size={14} /> Client Portfolio
+              </a>
+              <a 
+                href="#areas-served" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('areas-served')?.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-dark/40 hover:text-accent-green transition-colors flex items-center gap-2"
+              >
+                <Smartphone size={14} /> Service Areas
               </a>
             </div>
           </motion.div>
@@ -203,14 +227,14 @@ const Hero = () => {
               <img 
                 src="https://i.ibb.co/tpZL7L1h/mockup-descktop.png" 
                 alt="Desktop Website Mockup" 
-                className="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
+                className="w-full h-auto rounded-2xl shadow-xl shadow-slate-200 border border-gray-100"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute -bottom-10 -right-4 md:-right-10 w-32 md:w-48">
                 <img 
                   src="https://i.ibb.co/b51pp2N8/1000416693.png" 
                   alt="Mobile Mockup" 
-                  className="rounded-3xl shadow-2xl border-4 border-dark-primary"
+                  className="rounded-3xl shadow-2xl border-4 border-white"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -221,7 +245,7 @@ const Hero = () => {
               <img 
                 src="https://i.ibb.co/b51pp2N8/1000416693.png" 
                 alt="Mobile Website Mockup" 
-                className="w-64 h-auto rounded-[2.5rem] shadow-2xl border-8 border-dark-primary"
+                className="w-64 h-auto rounded-[2.5rem] shadow-2xl border-8 border-white"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -231,48 +255,48 @@ const Hero = () => {
 
       {/* Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-green/10 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon-green/5 blur-[120px] rounded-full"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"></div>
       </div>
     </section>
   );
 };
 
 const Problem = () => (
-  <section className="py-24 bg-dark-primary relative overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section className="py-24 bg-light-bg relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-primary-dark">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter mb-6 text-white">
-          Is Your Business <span className="text-electric-blue">Invisible</span> Online?
+        <h2 className="mb-6">
+          Is Your Business <span className="text-medium-teal italic">Invisible</span> Online?
         </h2>
-        <p className="text-text-secondary max-w-2xl mx-auto text-lg">
+        <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">
           Every day you wait, you're losing money. Here's how an outdated or non-existent website is hurting your bottom line.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           {
-            icon: <Users className="text-electric-blue" />,
+            icon: <Users className="text-medium-teal" />,
             title: "Losing Customers",
             desc: "Your potential customers are searching for your services right now. If they can't find you, they're calling your competitors."
           },
           {
-            icon: <AlertTriangle className="text-electric-blue" />,
+            icon: <AlertTriangle className="text-medium-teal" />,
             title: "Zero Trust",
             desc: "In 2026, customers judge your credibility by your website. An outdated site makes your business look unprofessional."
           },
           {
-            icon: <TrendingDown className="text-electric-blue" />,
+            icon: <TrendingDown className="text-medium-teal" />,
             title: "Lost Revenue",
             desc: "Without a high-converting website, you're missing out on leads, bookings, and sales that should be yours."
           }
         ].map((item, i) => (
-          <div key={i} className="p-8 rounded-3xl bg-dark-secondary border border-white/10 hover:border-electric-blue/30 transition-all group">
-            <div className="w-12 h-12 bg-electric-blue/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div key={i} className="p-10 rounded-xl bg-white border border-medium-teal/5 shadow-md hover:shadow-xl transition-all group">
+            <div className="w-14 h-14 bg-light-bg rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               {item.icon}
             </div>
-            <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
-            <p className="text-text-secondary leading-relaxed text-sm">{item.desc}</p>
+            <h3 className="text-xl font-bold mb-4 text-primary-dark">{item.title}</h3>
+            <p className="text-primary-dark/60 font-medium leading-relaxed text-sm">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -283,61 +307,61 @@ const Problem = () => (
 const Services = () => {
   const services = [
     {
-      icon: <Smartphone className="text-electric-blue" size={32} />,
+      icon: <Smartphone className="text-medium-teal" size={32} />,
       title: "Mobile-First Design",
       description: "90% of South Africans use their phones to find services. We ensure your site looks perfect and works fast on every device."
     },
     {
-      icon: <Search className="text-electric-blue" size={32} />,
+      icon: <Search className="text-medium-teal" size={32} />,
       title: "Local SEO Dominance",
       description: "Get found on the first page of Google. We optimize your site so local customers find you first when they need your help."
     },
     {
-      icon: <Zap className="text-electric-blue" size={32} />,
+      icon: <Zap className="text-accent-green" size={32} />,
       title: "Instant WhatsApp Contact",
       description: "We make it incredibly easy for customers to reach you. One click and they're chatting with you on WhatsApp."
     },
     {
-      icon: <Bot className="text-electric-blue" size={32} />,
+      icon: <Bot className="text-medium-teal" size={32} />,
       title: "AI Chat Automation",
       description: "Never miss a lead again. Our AI bots answer questions and book appointments 24/7, even while you sleep."
     },
     {
-      icon: <Shield className="text-electric-blue" size={32} />,
+      icon: <Shield className="text-medium-teal" size={32} />,
       title: "Secure & Fast Hosting",
-      description: "Your site will be lightning-fast and secure, with 99.9% uptime and daily backups included in your R300/month plan."
+      description: "Your site will be lightning-fast and secure, with 99.9% uptime and daily backups included in your R299/month plan."
     },
     {
-      icon: <TrendingUp className="text-electric-blue" size={32} />,
+      icon: <TrendingUp className="text-medium-teal" size={32} />,
       title: "Conversion Focused",
       description: "Every element of your site is strategically placed to turn visitors into paying customers. Results are our only metric."
     }
   ];
 
   return (
-    <section id="services" className="py-24 bg-dark-secondary">
+    <section id="services" className="py-24 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter mb-6 text-white">
-            We Build <span className="text-electric-blue">Customer-Generating</span> Machines
+          <h2 className="mb-6 text-primary-dark">
+            We Build <span className="text-medium-teal italic">Customer-Generating</span> Machines
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
+          <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">
             We don't just build "pretty" websites. We build systems designed to get you more leads, more calls, and more bookings.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
           {services.map((service, index) => (
             <motion.div
               key={index}
               whileHover={{ y: -10 }}
-              className="p-8 rounded-2xl bg-dark-primary border border-white/10 hover:border-electric-blue/30 transition-all group shadow-sm"
+              className="p-10 rounded-xl bg-white border border-medium-teal/10 shadow-md hover:shadow-xl transition-all group"
             >
-              <div className="mb-6 p-4 bg-dark-secondary rounded-xl w-fit group-hover:bg-electric-blue/10 transition-colors">
+              <div className="mb-6 p-4 bg-light-bg rounded-xl w-fit group-hover:bg-accent-green/10 transition-colors shadow-sm">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4 text-white">{service.title}</h3>
-              <p className="text-text-secondary leading-relaxed text-sm">{service.description}</p>
+              <h3 className="text-xl font-bold mb-4 text-primary-dark">{service.title}</h3>
+              <p className="text-primary-dark/60 font-medium leading-relaxed text-sm">{service.description}</p>
             </motion.div>
           ))}
         </div>
@@ -350,40 +374,40 @@ const HowItWorks = () => {
   const steps = [
     {
       number: "01",
-      title: "Consultation",
-      description: "Chat with us on WhatsApp. We'll show you exactly how to get more customers online."
+      title: "Reserve Slot",
+      description: "Book your slot for free. We only require card details to ensure you're a serious business owner."
     },
     {
       number: "02",
-      title: "Fast Build",
-      description: "We build your customer-generating machine in just 48 hours. No waiting around."
+      title: "Private Preview",
+      description: "We build your authority website and send you a private link to review the design and features."
     },
     {
       number: "03",
-      title: "Start Growing",
-      description: "Your site goes live and starts attracting real customers, calls, and bookings."
+      title: "Review & Keep",
+      description: "If you love it, activate your R299/mo subscription. If not, you pay nothing more. Ever."
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-dark-primary">
+    <section id="how-it-works" className="py-24 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">How It Works</h2>
-          <p className="text-text-secondary">Your journey to a professional website in 3 simple steps.</p>
+        <div className="text-center mb-20 text-primary-dark">
+          <h2 className="mb-4">How It <span className="text-medium-teal italic">Works</span></h2>
+          <p className="text-primary-dark/70 font-medium">Your journey to a professional website in 3 simple steps.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
           {/* Connector Line */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-white/10 -z-10"></div>
+          <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-medium-teal/10 -z-0"></div>
           
           {steps.map((step, index) => (
-            <div key={index} className="text-center">
-              <div className="text-6xl md:text-8xl font-display font-black text-white/5 mb-6 select-none">
+            <div key={index} className="text-center relative z-10">
+              <div className="text-6xl md:text-8xl font-display font-black text-medium-teal/5 mb-6 select-none">
                 {step.number}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">{step.title}</h3>
-              <p className="text-text-secondary leading-relaxed">{step.description}</p>
+              <h3 className="text-2xl font-bold mb-4 text-primary-dark">{step.title}</h3>
+              <p className="text-primary-dark/60 leading-relaxed font-medium">{step.description}</p>
             </div>
           ))}
         </div>
@@ -393,79 +417,67 @@ const HowItWorks = () => {
 };
 
 const Pricing = () => {
-  const plans = [
+  const steps = [
     {
-      name: "Starter Website",
-      price: "1000",
-      features: ["1 Page Design", "Mobile Friendly", "Contact Form", "Basic SEO", "48h Turnaround"],
-      popular: false,
-      desc: "Perfect for new businesses looking for a professional presence."
+      step: "01",
+      title: "Reserve Your Slot",
+      desc: "Secure your place in our development queue for R0. We require card details only to verify commitment and prevent spam.",
+      cta: "Reserve My Free Slot"
     },
     {
-      name: "Business Website",
-      price: "2500",
-      features: ["Up to 5 Pages", "Custom Design", "WhatsApp Integration", "Advanced SEO", "Google Maps Setup"],
-      popular: true,
-      desc: "Our most popular package for growing local businesses."
+      step: "02",
+      title: "We Build It First",
+      desc: "Our experts build your custom authority website and send you a private preview link in 5-7 days.",
+      cta: null
     },
     {
-      name: "Pro Website",
-      price: "4000+",
-      features: ["Up to 7 Pages", "AI Chatbot Integration", "Logo Design Included", "Premium SEO", "Priority Support"],
-      popular: false,
-      desc: "The ultimate customer-generating machine for established brands."
+      step: "03",
+      title: "Review & Activate",
+      desc: "If you love the result, keep it for R299/month. Hosting, SSL, and support are all included.",
+      cta: "Start Free Build"
     }
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-dark-primary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter mb-6 text-white">
-            Affordable <span className="text-electric-blue">Investment</span> for Massive Growth
+    <section id="pricing" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-primary-dark text-center">
+        <div className="mb-16">
+          <h2 className="mb-6">
+            Get Your Website Built <span className="text-medium-teal italic">For Free First</span>
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
-            Choose the package that fits your business stage. All plans include our R300/month high-speed hosting and support.
+          <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">
+            We've removed all the risk. Reserve your build slot today for R0 and see your new site before committing to a subscription.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          {steps.map((item, index) => (
             <div 
               key={index}
-              className={`relative p-8 rounded-3xl bg-dark-secondary border ${plan.popular ? 'border-electric-blue shadow-[0_0_30px_rgba(0,194,255,0.1)]' : 'border-white/10'} flex flex-col`}
+              className="p-10 rounded-[2.5rem] bg-light-bg border border-medium-teal/10 shadow-xl relative overflow-hidden group"
             >
-              {plan.popular && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-electric-blue text-black text-xs font-black uppercase px-4 py-1 rounded-full">
-                  Most Popular
-                </span>
-              )}
-              <h3 className="text-xl font-bold mb-2 text-white">{plan.name}</h3>
-              <p className="text-text-secondary text-xs mb-6 leading-relaxed">{plan.desc}</p>
-              <div className="flex items-baseline gap-1 mb-8">
-                <span className="text-4xl font-display font-bold text-electric-blue">R{plan.price}</span>
-                <span className="text-text-secondary text-sm">once-off</span>
+              <div className="text-6xl font-black text-medium-teal/5 absolute top-4 right-8 group-hover:text-medium-teal/10 transition-colors">
+                {item.step}
               </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                {plan.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-center gap-3 text-sm text-white">
-                    <CheckCircle2 size={16} className="text-neon-green shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Link 
-                to="/get-started"
-                className={`w-full py-4 rounded-xl font-bold transition-all text-center cursor-pointer active:scale-95 ${plan.popular ? 'bg-electric-blue text-black hover:scale-[1.02]' : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'}`}
-              >
-                Choose {plan.name}
-              </Link>
+              <h3 className="text-2xl font-bold mb-4 relative z-10">{item.title}</h3>
+              <p className="text-secondary-dark/60 font-medium leading-relaxed mb-8 relative z-10">
+                {item.desc}
+              </p>
+              {item.cta && (
+                <Link 
+                  to="/checkout"
+                  className="w-full h-[50px] bg-medium-teal text-light-bg rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all shadow-lg shadow-medium-teal/10"
+                >
+                  {item.cta} <ArrowRight size={16} />
+                </Link>
+              )}
             </div>
           ))}
         </div>
-        <div className="mt-16 text-center p-8 rounded-3xl bg-dark-secondary border border-white/10">
-          <p className="text-text-secondary italic text-sm">
-            "We only take on a limited number of clients each month to ensure quality and fast delivery."
+
+        <div className="mt-16 p-8 bg-secondary-bg rounded-3xl border border-medium-teal/10 inline-block">
+          <p className="text-sm font-bold text-secondary-dark/60 uppercase tracking-widest">
+            After Preview: <span className="text-primary-dark">R299 Monthly Subscription</span> (Cancel Anytime)
           </p>
         </div>
       </div>
@@ -475,7 +487,7 @@ const Pricing = () => {
 
 const WhyChooseUs = () => {
   const reasons = [
-    { title: "Affordable Pricing", desc: "High-end quality at a fraction of agency costs. Starting from R300/month." },
+    { title: "Affordable Pricing", desc: "High-end quality at a fraction of agency costs. Starting from R299/month." },
     { title: "Fast Turnaround", desc: "We get you online in just 48 hours, not weeks. Speed is our priority." },
     { title: "Mobile-First Design", desc: "Optimized for the way South Africans browse the web on their phones." },
     { title: "AI Automation", desc: "Cutting-edge tools to help you scale your business and handle leads 24/7." },
@@ -490,20 +502,20 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-24 bg-dark-primary">
+    <section className="py-24 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 leading-tight tracking-tighter text-white">
-              Why South African Businesses <span className="text-electric-blue">Choose Us</span>
+          <div className="text-primary-dark pr-4">
+            <h2 className="mb-8">
+              Why South African Businesses <span className="text-medium-teal italic">Choose Us</span>
             </h2>
             <div className="space-y-8">
               {reasons.map((reason, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-neon-green mt-2.5"></div>
+                  <div className="shrink-0 w-2.5 h-2.5 rounded-full bg-accent-green mt-2 shadow-sm shadow-accent-green/20"></div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 text-white">{reason.title}</h4>
-                    <p className="text-text-secondary text-sm leading-relaxed">{reason.desc}</p>
+                    <h4 className="font-bold text-lg mb-1">{reason.title}</h4>
+                    <p className="text-primary-dark/60 text-sm leading-relaxed font-medium">{reason.desc}</p>
                   </div>
                 </div>
               ))}
@@ -511,11 +523,11 @@ const WhyChooseUs = () => {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {stats.map((stat, index) => (
-              <div key={index} className="p-8 rounded-3xl bg-dark-secondary border border-white/10 flex flex-col items-center text-center group hover:border-electric-blue/20 transition-colors">
-                <div className="mb-4 text-electric-blue group-hover:scale-110 transition-transform">
+              <div key={index} className="p-8 rounded-2xl bg-white border border-medium-teal/5 flex flex-col items-center text-center group hover:border-accent-green/20 hover:shadow-xl transition-all shadow-sm">
+                <div className="mb-4 text-medium-teal group-hover:scale-110 transition-transform">
                   {stat.icon}
                 </div>
-                <span className="font-bold text-xs uppercase tracking-widest text-white">{stat.label}</span>
+                <span className="font-bold text-[10px] uppercase tracking-widest text-primary-dark">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -560,13 +572,13 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-dark-secondary">
+    <section id="portfolio" className="py-24 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 tracking-tighter text-white">
-            SEO Case <span className="text-electric-blue">Studies</span>
+        <div className="text-center mb-16 text-primary-dark">
+          <h2 className="mb-4">
+            SEO Case <span className="text-medium-teal italic">Studies</span>
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto">Real results for local South African businesses. We transform websites into high-authority money-making assets.</p>
+          <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">Real results for local South African businesses. We transform websites into high-authority money-making assets.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
@@ -574,20 +586,20 @@ const Portfolio = () => {
             <motion.div 
               key={index}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl bg-dark-primary border border-white/10 shadow-sm flex flex-col"
+              className="group relative overflow-hidden rounded-xl bg-white border border-medium-teal/10 shadow-md flex flex-col hover:shadow-xl hover:border-accent-green/20 transition-all"
             >
-              <div className="bg-dark-secondary/50 flex items-center justify-center overflow-hidden p-4">
+              <div className="bg-light-bg flex items-center justify-center overflow-hidden p-6">
                 <img 
                   src={project.img} 
                   alt={project.title} 
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.05] drop-shadow-xl"
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="p-6">
-                <h4 className="font-bold text-lg text-white mb-2">{project.title}</h4>
-                <p className="text-neon-green text-sm font-bold mb-1">{project.results}</p>
-                <p className="text-text-secondary text-xs">High-Authority Web Design & Local SEO</p>
+              <div className="p-8">
+                <h4 className="font-bold text-lg text-primary-dark mb-2">{project.title}</h4>
+                <p className="text-medium-teal text-sm font-black mb-1">{project.results}</p>
+                <p className="text-primary-dark/40 text-[10px] font-bold uppercase tracking-widest">High-Authority Web Design & Local SEO</p>
               </div>
             </motion.div>
           ))}
@@ -601,7 +613,7 @@ const FAQ = () => {
   const faqs = [
     { q: "How long does it really take?", a: "We pride ourselves on our 48-hour turnaround for starter and business packages once all content is received." },
     { q: "Do I own my website?", a: "Yes, 100%. Once the final payment is made, you own the website and all its assets." },
-    { q: "What is the monthly R300 for?", a: "This covers high-speed local hosting, security updates, daily backups, and dedicated technical support." },
+    { q: "What is the monthly R299 for?", a: "This covers high-speed local hosting, security updates, daily backups, and dedicated technical support." },
     { q: "Can I update the site myself?", a: "Absolutely! We build on user-friendly platforms and provide basic training so you can make simple updates." },
     { q: "Do you offer email addresses?", a: "Yes, all our hosting packages include professional business email addresses (e.g., help@vibrantws.co.za)." }
   ];
@@ -609,22 +621,22 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-dark-primary">
+    <section className="py-24 bg-light-bg">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">Frequently Asked Questions</h2>
-          <p className="text-text-secondary">Got questions? We've got answers.</p>
+          <h2 className="mb-4 text-primary-dark">Frequently Asked <span className="text-medium-teal italic">Questions</span></h2>
+          <p className="text-primary-dark/70 font-medium">Got questions? We've got answers.</p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-white/10 rounded-2xl overflow-hidden bg-dark-secondary">
+            <div key={index} className="border border-medium-teal/10 rounded-xl overflow-hidden bg-white shadow-sm transition-all">
               <button 
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors cursor-pointer group"
+                className="w-full p-6 text-left flex justify-between items-center hover:bg-light-bg transition-colors cursor-pointer group"
               >
-                <span className="font-bold text-white group-hover:text-electric-blue transition-colors">{faq.q}</span>
-                <ChevronDown className={`text-electric-blue transition-transform ${activeIndex === index ? 'rotate-180' : ''}`} />
+                <span className="font-bold text-primary-dark group-hover:text-medium-teal transition-colors">{faq.q}</span>
+                <ChevronDown className={`text-medium-teal transition-transform ${activeIndex === index ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>
                 {activeIndex === index && (
@@ -634,7 +646,7 @@ const FAQ = () => {
                     exit={{ height: 0, opacity: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 pt-0 text-text-secondary leading-relaxed">
+                    <div className="p-6 pt-0 text-primary-dark/60 font-medium leading-relaxed">
                       {faq.a}
                     </div>
                   </motion.div>
@@ -693,14 +705,14 @@ const LeadForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-dark-primary">
+    <section id="contact" className="py-24 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tighter text-white">
-              Let's Build Your <span className="text-electric-blue underline decoration-electric-blue/30 underline-offset-8">Digital Future</span>
+          <div className="text-primary-dark pr-4">
+            <h2 className="mb-6 tracking-tighter">
+              Let's Build Your <span className="text-medium-teal italic">Digital Future</span>
             </h2>
-            <p className="text-text-secondary text-lg mb-10 leading-relaxed max-w-lg">
+            <p className="text-primary-dark/80 text-lg mb-10 leading-relaxed max-w-lg font-medium">
               Ready to take your business to the next level? Fill out the form and we'll get back to you within 24 hours with a custom strategy.
             </p>
             
@@ -709,26 +721,26 @@ const LeadForm = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 text-white group cursor-pointer"
+                className="flex items-center gap-4 text-primary-dark group cursor-pointer"
               >
-                <div className="w-12 h-12 bg-dark-secondary rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-electric-blue/50 transition-colors">
-                  <Smartphone className="text-electric-blue w-5 h-5 group-hover:scale-110 transition-transform" />
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-medium-teal/10 group-hover:border-accent-green/50 transition-colors shadow-sm">
+                  <Smartphone className="text-medium-teal w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
-                  <p className="text-xs text-text-secondary uppercase font-bold tracking-widest">WhatsApp Us</p>
-                  <p className="font-bold group-hover:text-electric-blue transition-colors">+27 64 519 2556</p>
+                  <p className="text-[10px] text-primary-dark/40 uppercase font-black tracking-widest mb-0.5">WhatsApp Us</p>
+                  <p className="font-bold group-hover:text-medium-teal transition-colors">+27 64 519 2556</p>
                 </div>
               </a>
               <a 
                 href="mailto:help@vibrantws.co.za"
-                className="flex items-center gap-4 text-white group cursor-pointer"
+                className="flex items-center gap-4 text-primary-dark group cursor-pointer"
               >
-                <div className="w-12 h-12 bg-dark-secondary rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-electric-blue/50 transition-colors">
-                  <Mail className="text-electric-blue w-5 h-5 group-hover:scale-110 transition-transform" />
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center border border-medium-teal/10 group-hover:border-accent-green/50 transition-colors shadow-sm">
+                  <Mail className="text-medium-teal w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
-                  <p className="text-xs text-text-secondary uppercase font-bold tracking-widest">Email Us</p>
-                  <p className="font-bold group-hover:text-electric-blue transition-colors">help@vibrantws.co.za</p>
+                  <p className="text-[10px] text-primary-dark/40 uppercase font-black tracking-widest mb-0.5">Email Us</p>
+                  <p className="font-bold group-hover:text-medium-teal transition-colors">help@vibrantws.co.za</p>
                 </div>
               </a>
             </div>
@@ -738,9 +750,9 @@ const LeadForm = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-dark-secondary p-8 md:p-10 rounded-[2.5rem] border border-white/10 shadow-xl"
+            className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-medium-teal/5 shadow-2xl"
           >
-            <p className="text-white font-bold text-lg mb-8 leading-tight">
+            <p className="text-primary-dark font-black text-lg mb-8 leading-tight">
               Tell us about your business — we’ll show you exactly how to get more customers online.
             </p>
             <form 
@@ -749,9 +761,9 @@ const LeadForm = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold text-text-secondary ml-1">Full Name *</label>
+                  <label htmlFor="name" className="text-xs font-black text-primary-dark/40 uppercase tracking-widest ml-1">Full Name *</label>
                   <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dark/40" />
                     <input 
                       required
                       type="text"
@@ -760,14 +772,14 @@ const LeadForm = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
+                      className="w-full bg-light-bg border border-medium-teal/10 rounded-2xl py-4 pl-12 pr-4 focus:border-accent-green focus:ring-1 focus:ring-accent-green outline-none transition-all text-primary-dark placeholder:text-primary-dark/30 font-medium"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold text-text-secondary ml-1">Email Address *</label>
+                  <label htmlFor="email" className="text-xs font-black text-primary-dark/40 uppercase tracking-widest ml-1">Email Address *</label>
                   <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dark/40" />
                     <input 
                       required
                       type="email"
@@ -776,7 +788,7 @@ const LeadForm = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@example.com"
-                      className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
+                      className="w-full bg-light-bg border border-medium-teal/10 rounded-2xl py-4 pl-12 pr-4 focus:border-accent-green focus:ring-1 focus:ring-accent-green outline-none transition-all text-primary-dark placeholder:text-primary-dark/30 font-medium"
                     />
                   </div>
                 </div>
@@ -784,9 +796,9 @@ const LeadForm = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-bold text-text-secondary ml-1">Phone Number *</label>
+                  <label htmlFor="phone" className="text-xs font-black text-primary-dark/40 uppercase tracking-widest ml-1">Phone Number *</label>
                   <div className="relative">
-                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dark/40" />
                     <input 
                       required
                       type="tel"
@@ -795,14 +807,14 @@ const LeadForm = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+27 64 519 2556"
-                      className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
+                      className="w-full bg-light-bg border border-medium-teal/10 rounded-2xl py-4 pl-12 pr-4 focus:border-accent-green focus:ring-1 focus:ring-accent-green outline-none transition-all text-primary-dark placeholder:text-primary-dark/30 font-medium"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="business" className="text-sm font-bold text-text-secondary ml-1">Business Name</label>
+                  <label htmlFor="business" className="text-xs font-black text-primary-dark/40 uppercase tracking-widest ml-1">Business Name</label>
                   <div className="relative">
-                    <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
+                    <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-dark/40" />
                     <input 
                       type="text"
                       id="business"
@@ -810,14 +822,14 @@ const LeadForm = () => {
                       value={formData.business}
                       onChange={handleChange}
                       placeholder="Your Company Ltd"
-                      className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 pl-12 pr-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary"
+                      className="w-full bg-light-bg border border-medium-teal/10 rounded-2xl py-4 pl-12 pr-4 focus:border-accent-green focus:ring-1 focus:ring-accent-green outline-none transition-all text-primary-dark placeholder:text-primary-dark/30 font-medium"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-text-secondary ml-1">Message / Website Needs</label>
+                <label htmlFor="message" className="text-xs font-black text-primary-dark/40 uppercase tracking-widest ml-1">Message / Website Needs</label>
                 <textarea 
                   required
                   id="message"
@@ -826,7 +838,7 @@ const LeadForm = () => {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Tell us about your project..."
-                  className="w-full bg-dark-primary border border-white/10 rounded-2xl py-4 px-4 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-all text-white placeholder:text-text-secondary resize-none"
+                  className="w-full bg-light-bg border border-medium-teal/10 rounded-2xl py-4 px-4 focus:border-accent-green focus:ring-1 focus:ring-accent-green outline-none transition-all text-primary-dark placeholder:text-primary-dark/30 font-medium resize-none"
                 ></textarea>
               </div>
 
@@ -834,7 +846,7 @@ const LeadForm = () => {
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-green-500/20 border border-green-500/30 text-green-400 rounded-2xl text-center font-bold"
+                  className="p-4 bg-accent-green/10 border border-accent-green/20 text-dark-teal rounded-2xl text-center font-bold"
                 >
                   Message sent! We'll be in touch soon.
                 </motion.div>
@@ -843,7 +855,7 @@ const LeadForm = () => {
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-red-500/20 border border-red-500/30 text-red-400 rounded-2xl text-center font-bold text-sm"
+                  className="p-4 bg-red-50 border border-red-100 text-red-600 rounded-2xl text-center font-bold text-sm"
                 >
                   {errorMessage}
                 </motion.div>
@@ -852,19 +864,19 @@ const LeadForm = () => {
               <button 
                 disabled={status === 'submitting'}
                 type="submit"
-                className="w-full bg-electric-blue text-black font-black py-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full h-[50px] bg-medium-teal text-light-bg font-semibold rounded-[10px] hover:bg-dark-teal transition-all flex items-center justify-center gap-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               >
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 <ArrowRight className="w-5 h-5" />
               </button>
 
               <div className="pt-4 text-center">
-                <p className="text-text-secondary text-sm mb-3 uppercase tracking-widest font-bold">Or chat with us directly</p>
+                <p className="text-[10px] text-primary-dark/40 uppercase tracking-[0.2em] font-black mb-3">Or chat with us directly</p>
                 <a 
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white hover:text-electric-blue transition-colors font-bold"
+                  className="inline-flex items-center gap-2 text-primary-dark hover:text-medium-teal transition-colors font-bold"
                 >
                   <WhatsAppIcon size={20} className="text-[#25D366]" />
                   +27 64 519 2556
@@ -895,19 +907,19 @@ const Reviews = () => {
     {
       name: "David Naidoo",
       role: "Construction Services",
-      content: "I was worried about the cost, but the R300/month hosting and support makes it so affordable. The site looks amazing and it's already paying for itself with new contracts.",
+      content: "I was worried about the cost, but the R299/month hosting and support makes it so affordable. The site looks amazing and it's already paying for itself with new contracts.",
       rating: 5
     }
   ];
 
   return (
-    <section id="reviews" className="py-24 bg-dark-secondary">
+    <section id="reviews" className="py-24 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tighter mb-6 text-white">
-            Trusted by <span className="text-electric-blue">Local Businesses</span>
+          <h2 className="mb-6 text-primary-dark">
+            Trusted by <span className="text-medium-teal italic">Local Businesses</span>
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
+          <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">
             See how we've helped South African entrepreneurs dominate their local markets.
           </p>
         </div>
@@ -920,23 +932,23 @@ const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-dark-primary border border-white/10 hover:border-electric-blue/20 transition-all group shadow-sm"
+              className="p-10 rounded-xl bg-white border border-medium-teal/10 hover:border-accent-green/20 transition-all group shadow-md hover:shadow-xl"
             >
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-electric-blue text-electric-blue" />
+                  <Star key={i} size={16} className="fill-accent-green text-accent-green" />
                 ))}
               </div>
-              <p className="text-text-secondary mb-8 italic leading-relaxed">
+              <p className="text-primary-dark/70 mb-8 italic leading-relaxed font-medium text-sm">
                 "{testimonial.content}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-dark-secondary flex items-center justify-center text-electric-blue font-bold border border-white/10">
+                <div className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center text-medium-teal font-bold border border-medium-teal/10 uppercase">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="font-bold text-white">{testimonial.name}</h4>
-                  <p className="text-text-secondary text-sm">{testimonial.role}</p>
+                  <h4 className="font-bold text-primary-dark">{testimonial.name}</h4>
+                  <p className="text-primary-dark/40 text-[10px] font-bold uppercase tracking-widest">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -948,19 +960,19 @@ const Reviews = () => {
 };
 
 const CTA = () => (
-  <section className="py-24 bg-dark-primary relative overflow-hidden">
+  <section className="py-24 bg-light-bg relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="bg-electric-blue rounded-[3rem] p-12 md:p-24 text-center text-black">
-        <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-8 leading-tight">
+      <div className="bg-primary-dark rounded-[3rem] p-12 md:p-24 text-center text-light-bg shadow-2xl">
+        <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-8 leading-tight text-light-bg">
           Get Your Website & Start <br className="hidden md:block" /> Getting Customers Today
         </h2>
         <p className="text-xl font-medium mb-12 max-w-2xl mx-auto opacity-80">
           Don't let another day go by while your competitors take your leads. Let's build your customer-generating machine.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
           <Link 
             to="/get-started"
-            className="w-full sm:w-auto bg-black text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all text-center cursor-pointer shadow-lg"
+            className="w-full sm:w-auto h-[60px] bg-medium-teal text-light-bg px-12 rounded-[12px] font-semibold uppercase tracking-widest text-sm hover:bg-dark-teal transition-all flex items-center justify-center cursor-pointer shadow-xl"
           >
             Get Started
           </Link>
@@ -968,10 +980,37 @@ const CTA = () => (
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+            className="w-full sm:w-auto h-[60px] bg-transparent text-light-bg border-2 border-light-bg/20 px-12 rounded-[12px] font-semibold uppercase tracking-widest text-sm hover:bg-light-bg/10 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl"
           >
             <WhatsAppIcon size={24} />
-            Chat on WhatsApp
+            WhatsApp Us
+          </a>
+        </div>
+
+        {/* Migrated Links from Navbar */}
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 pt-10 border-t border-light-bg/10">
+          <Link to="/blog" className="text-[11px] font-black uppercase tracking-[0.2em] text-light-bg/40 hover:text-accent-green transition-colors">
+            Success Blog
+          </Link>
+          <a 
+            href="#portfolio" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+            }} 
+            className="text-[11px] font-black uppercase tracking-[0.2em] text-light-bg/40 hover:text-accent-green transition-colors"
+          >
+            Client Portfolio
+          </a>
+          <a 
+            href="#areas-served" 
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('areas-served')?.scrollIntoView({ behavior: 'smooth' });
+            }} 
+            className="text-[11px] font-black uppercase tracking-[0.2em] text-light-bg/40 hover:text-accent-green transition-colors"
+          >
+            Service Areas
           </a>
         </div>
       </div>
@@ -1000,10 +1039,10 @@ const FloatingWhatsApp = () => {
 
 const Home = () => {
   return (
-    <div className="min-h-screen font-sans selection:bg-electric-blue selection:text-black bg-dark-primary">
+    <div className="min-h-screen font-sans selection:bg-medium-teal selection:text-light-bg bg-light-bg">
       <Helmet>
         <title>Web Designer Cape Town & Langebaan | Professional Website Design SA</title>
-        <meta name="description" content="Affordable, high-converting web design and local SEO services in Cape Town, Langebaan, and across South Africa. Get a professional business website for R1000 once-off." />
+        <meta name="description" content="Affordable, high-converting web design and local SEO services in South Africa. Get a professional business website preview for R0 today." />
         <script type="application/ld+json">
           {`
             {
@@ -1079,6 +1118,9 @@ export default function App() {
         <Route path="/whatsapp-contact" element={<WhatsAppContact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/payment-cancel" element={<PaymentCancel />} />
         
         {/* Local SEO Pages - Manually registered to satisfy strict TS types */}
         <Route 
