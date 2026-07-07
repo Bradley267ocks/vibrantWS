@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { getWhatsAppCustomUrl } from '../utils/whatsapp';
 
 import { Link } from 'react-router-dom';
 
@@ -43,7 +44,7 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({
   location, 
   content 
 }) => {
-  const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%27m%20interested%20in%20" + encodeURIComponent(title) + "%20services.";
+  const WHATSAPP_URL = getWhatsAppCustomUrl("Hi Vibrant Web Solutions. I'm interested in " + title + " services.");
 
   return (
     <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
@@ -92,12 +93,14 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({
               {subheadline}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                to="/checkout"
-                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10"
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10 animate-pulse"
               >
                 Reserve My Build Slot <ArrowRight size={20} />
-              </Link>
+              </a>
             </div>
           </motion.div>
 
@@ -141,12 +144,14 @@ const LocalSEOPage: React.FC<LocalSEOPageProps> = ({
                 <p className="text-primary-dark/70 mb-6 font-medium">
                   In a competitive landscape like {location}, a standard website isn't enough. You need an authority site that ranks and converts.
                 </p>
-                <Link 
-                  to="/checkout"
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full block h-[50px] bg-primary-dark text-light-bg px-6 rounded-[10px] font-semibold text-center leading-[50px] hover:bg-medium-teal transition-all cursor-pointer shadow-lg"
                 >
                   Start My Free Build
-                </Link>
+                </a>
                 <div className="mt-8 space-y-4">
                   {[
                     { icon: <Smartphone size={18} />, text: "Mobile-First Excellence" },

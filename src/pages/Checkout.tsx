@@ -32,15 +32,12 @@ const Checkout = () => {
                animate={{ opacity: 1, x: 0 }}
                className="bg-white border border-medium-teal/10 rounded-3xl p-8 shadow-2xl"
             >
-              <h3 className="text-xl font-bold text-primary-dark mb-6">Reservation Details</h3>
+              <h3 className="text-xl font-bold text-primary-dark mb-6">Build Slot Details</h3>
               
               <div className="space-y-6">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <p className="font-bold text-primary-dark text-lg">Build Slot Reservation</p>
-                    <p className="text-sm text-primary-dark/50 font-medium">Custom Website Preview Build</p>
-                  </div>
-                  <p className="font-bold text-primary-dark">R{amount}</p>
+                <div>
+                  <p className="font-bold text-primary-dark text-lg">Free Website Build</p>
+                  <p className="text-sm text-primary-dark/50 font-medium">Custom Website Preview Build</p>
                 </div>
 
                 <div className="space-y-3 pt-6 border-t border-medium-teal/5">
@@ -60,10 +57,10 @@ const Checkout = () => {
 
                 <div className="pt-6 border-t border-medium-teal/10 mt-6">
                   <div className="flex justify-between items-center text-xl font-black">
-                     <span className="text-primary-dark">Total Booking Fee</span>
-                     <span className="text-medium-teal">R{amount}</span>
+                     <span className="text-primary-dark">Setup Fee</span>
+                     <span className="text-medium-teal">R0.00 (Free)</span>
                   </div>
-                  <p className="text-[10px] text-primary-dark/30 font-bold text-right mt-1">Free reservation. Card details for commitment only.</p>
+                  <p className="text-[10px] text-primary-dark/30 font-bold text-right mt-1">100% Risk-Free. See your site before you pay.</p>
                 </div>
               </div>
 

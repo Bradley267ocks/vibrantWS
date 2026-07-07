@@ -1,8 +1,9 @@
 import React from 'react';
 import { Smartphone, Globe, Facebook, Instagram, Twitter, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
-const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
+const WHATSAPP_URL = getWhatsAppUrl('contactUs');
 const FACEBOOK_URL = "https://www.facebook.com/vibrantwebsolutions";
 
 const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
@@ -96,7 +97,7 @@ const Footer = () => {
             <h4 className="font-bold mb-6 text-light-bg uppercase tracking-widest text-xs">Resources</h4>
             <ul className="space-y-4 text-light-bg/60 text-sm font-medium">
               <li><a href="/#services" onClick={(e) => handleHashLink(e, 'services')} className="hover:text-accent-green transition-colors cursor-pointer">Our Services</a></li>
-              <li><Link to="/checkout" className="hover:text-accent-green transition-colors cursor-pointer">Start Free Build</Link></li>
+              <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-accent-green transition-colors cursor-pointer">Start Free Build</a></li>
               <li><a href="/#portfolio" onClick={(e) => handleHashLink(e, 'portfolio')} className="hover:text-accent-green transition-colors cursor-pointer">Case Studies</a></li>
             </ul>
           </div>

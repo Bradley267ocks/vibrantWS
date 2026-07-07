@@ -5,8 +5,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
+import { getWhatsAppUrl } from '../utils/whatsapp';
+
 const GetMyWebsite = () => {
-  const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%20want%20to%20get%20my%20website%20started%21";
+  const WHATSAPP_URL = getWhatsAppUrl('getMyWebsite');
 
   return (
     <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
@@ -23,14 +25,16 @@ const GetMyWebsite = () => {
               We Build Your Website <span className="text-medium-teal italic">For Free First</span>
             </h1>
             <p className="text-xl text-primary-dark/70 leading-relaxed mb-10 font-medium">
-              Reserve your free build slot today. We'll build a complete preview of your new authority website and send you a private link to review.
+              Request your free website preview. We'll build a complete preview of your new authority website and send you a private link to review.
             </p>
-            <Link 
-              to="/checkout"
-              className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg animate-pulse"
             >
               Start My Free Build Preview <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
 
           <div className="prose prose-slate max-w-4xl mx-auto">
@@ -44,7 +48,7 @@ const GetMyWebsite = () => {
               <div className="p-8 rounded-2xl bg-white border border-medium-teal/10 shadow-xl">
                 <Shield className="text-medium-teal mb-4" size={32} />
                 <h4 className="text-xl font-bold mb-2 text-primary-dark">Zero Financial Risk</h4>
-                <p className="text-primary-dark/50 text-sm font-medium">You don't pay anything upfront. A free booking reserves your slot—we only collect card details to ensure commitment.</p>
+                <p className="text-primary-dark/50 text-sm font-medium">You don't pay anything upfront. We build your custom draft completely free with no obligations or setup fees.</p>
               </div>
               <div className="p-8 rounded-2xl bg-white border border-medium-teal/10 shadow-xl">
                 <Search className="text-medium-teal mb-4" size={32} />
@@ -69,17 +73,19 @@ const GetMyWebsite = () => {
             </p>
 
             <div className="bg-white border border-medium-teal/10 p-10 rounded-[2.5rem] my-12 shadow-2xl text-center">
-              <h4 className="text-3xl font-bold mb-4 text-primary-dark">Reserve Your Free Build Slot</h4>
+              <h4 className="text-3xl font-bold mb-4 text-primary-dark">Request Your Free Website Draft</h4>
               <p className="text-primary-dark/60 mb-8 font-medium">
-                We only accept 5 new build-first requests per week to maintain our high quality standards. Reserve yours today for R10.
+                We only accept 5 new build-first requests per week to maintain our high quality standards. Request yours completely risk-free today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  to="/checkout"
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-medium-teal text-white px-10 h-[56px] flex items-center justify-center rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
                 >
-                  Reserve Slot (R10)
-                </Link>
+                  Request Free Build
+                </a>
                 <Link 
                   to="/"
                   className="bg-transparent text-primary-dark border-2 border-primary-dark/20 px-10 h-[56px] flex items-center justify-center rounded-xl font-bold hover:bg-primary-dark/5 transition-all cursor-pointer"

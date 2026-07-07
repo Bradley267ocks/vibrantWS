@@ -47,8 +47,9 @@ import Checkout from './pages/Checkout';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentCancel from './pages/PaymentCancel';
 import { seoPagesData } from './data/seoContent';
+import { getWhatsAppUrl } from './utils/whatsapp';
 
-const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
+const WHATSAPP_URL = getWhatsAppUrl('contactUs');
 
 const AgencyCredentials = () => (
   <div className="bg-light-bg py-12 border-y border-medium-teal/10">
@@ -171,18 +172,20 @@ const Hero = () => {
               See Your New Website <span className="text-medium-teal italic">Before You Pay</span>
             </h1>
             <p className="text-secondary-dark/80 mb-10 max-w-2xl mx-auto font-medium">
-              We build your website first and send you a private preview link. If you love it, keep it for only R299 per month. Reserve your build slot today for R10.
+              We build your website first and send you a private preview link. If you love it, keep it for only R299 per month. Start completely risk-free.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link 
-                to="/checkout"
-                className="w-full sm:w-auto bg-medium-teal text-light-bg h-[50px] min-w-[200px] px-8 rounded-[10px] font-semibold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 hover:bg-dark-teal transition-all group cursor-pointer shadow-lg"
+              <a 
+                href={getWhatsAppUrl('freePreview')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-medium-teal text-light-bg h-[50px] min-w-[200px] px-8 rounded-[10px] font-semibold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 hover:bg-dark-teal transition-all group cursor-pointer shadow-lg animate-pulse"
               >
                 Start My Free Build Preview
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
               <div className="flex items-center gap-3 px-6 h-[50px] rounded-[10px] bg-white border border-medium-teal/10">
-                <span className="text-[10px] font-black uppercase tracking-widest text-primary-dark/60">Free Reservation</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary-dark/60">Risk-Free Preview</span>
               </div>
             </div>
 
@@ -420,20 +423,20 @@ const Pricing = () => {
   const steps = [
     {
       step: "01",
-      title: "Reserve Your Slot",
-      desc: "Secure your place in our development queue for R10. We require card details only to verify commitment and prevent spam.",
-      cta: "Reserve My Free Slot"
+      title: "Request Your Preview",
+      desc: "Tell us about your business and goals. We require no upfront payments, booking fees, or credit cards.",
+      cta: "Request Free Build"
     },
     {
       step: "02",
       title: "We Build It First",
-      desc: "Our experts build your custom authority website and send you a private preview link in 5-7 days.",
+      desc: "Our experts design and build your custom authority website draft and send you a private link to review in 5-7 days.",
       cta: null
     },
     {
       step: "03",
       title: "Review & Activate",
-      desc: "If you love the result, keep it for R299/month. Hosting, SSL, and support are all included.",
+      desc: "If you love the custom website draft, keep it for R299/month. Hosting, SSL, and ongoing support are all included.",
       cta: "Start Free Build"
     }
   ];
@@ -446,7 +449,7 @@ const Pricing = () => {
             Get Your Website Built <span className="text-medium-teal italic">For Free First</span>
           </h2>
           <p className="text-primary-dark/70 max-w-2xl mx-auto font-medium">
-            We've removed all the risk. Reserve your build slot today for R10 and see your new site before committing to a subscription.
+            We've removed all the risk. Request your free website draft today and see it before you pay a single cent.
           </p>
         </div>
 
@@ -464,12 +467,14 @@ const Pricing = () => {
                 {item.desc}
               </p>
               {item.cta && (
-                <Link 
-                  to="/checkout"
+                <a 
+                  href={item.step === "01" ? getWhatsAppUrl('freePreview') : getWhatsAppUrl('buildMyWebsite')}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full h-[50px] bg-medium-teal text-light-bg rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all shadow-lg shadow-medium-teal/10"
                 >
                   {item.cta} <ArrowRight size={16} />
-                </Link>
+                </a>
               )}
             </div>
           ))}
@@ -477,7 +482,7 @@ const Pricing = () => {
 
         <div className="mt-16 p-8 bg-secondary-bg rounded-3xl border border-medium-teal/10 inline-block">
           <p className="text-sm font-bold text-secondary-dark/60 uppercase tracking-widest">
-            After Preview: <span className="text-primary-dark">R299 Monthly Subscription</span> (Cancel Anytime)
+            After Preview: <span className="text-primary-dark">R299 Monthly Subscription</span> (No Upfront Setup Fee)
           </p>
         </div>
       </div>
@@ -970,14 +975,16 @@ const CTA = () => (
           Don't let another day go by while your competitors take your leads. Let's build your customer-generating machine.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-          <Link 
-            to="/get-started"
-            className="w-full sm:w-auto h-[60px] bg-medium-teal text-light-bg px-12 rounded-[12px] font-semibold uppercase tracking-widest text-sm hover:bg-dark-teal transition-all flex items-center justify-center cursor-pointer shadow-xl"
+          <a 
+            href={getWhatsAppUrl('getStarted')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto h-[60px] bg-medium-teal text-light-bg px-12 rounded-[12px] font-semibold uppercase tracking-widest text-sm hover:bg-dark-teal transition-all flex items-center justify-center cursor-pointer shadow-xl animate-pulse"
           >
             Get Started
-          </Link>
+          </a>
           <a 
-            href={WHATSAPP_URL}
+            href={getWhatsAppUrl('contactUs')}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto h-[60px] bg-transparent text-light-bg border-2 border-light-bg/20 px-12 rounded-[12px] font-semibold uppercase tracking-widest text-sm hover:bg-light-bg/10 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl"
@@ -1021,7 +1028,7 @@ const CTA = () => (
 const FloatingWhatsApp = () => {
   return (
     <motion.a
-      href={WHATSAPP_URL}
+      href={getWhatsAppUrl('contactUs')}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
@@ -1042,7 +1049,7 @@ const Home = () => {
     <div className="min-h-screen font-sans selection:bg-medium-teal selection:text-light-bg bg-light-bg">
       <Helmet>
         <title>Web Designer Cape Town & Langebaan | Professional Website Design SA</title>
-        <meta name="description" content="Affordable, high-converting web design and local SEO services in South Africa. Get a professional business website preview for R10 today." />
+        <meta name="description" content="Affordable, high-converting web design and local SEO services in South Africa. Get a professional business website preview for R0 today." />
         <script type="application/ld+json">
           {`
             {

@@ -30,7 +30,7 @@ export const seoPagesData = {
         ]
       },
       faq: [
-        { q: "How much does a web designer in Cape Town cost?", a: "To reserve your build slot, you pay a once-off R10 booking fee. If you love the custom preview website we build for you, you then subscribe for just R299/month with no upfront design costs." },
+        { q: "How much does a web designer in Cape Town cost?", a: "To reserve your build slot, you pay a once-off R0 booking fee. If you love the custom preview website we build for you, you then subscribe for just R299/month with no upfront design costs." },
         { q: "Can you help rank my business on Google Maps in Cape Town?", a: "Yes! Our Business and Pro packages include full Google Business Profile (GBP) optimization specifically for the Cape Town region to boost your visibility." },
         { q: "How long does it take to build a website in Cape Town?", a: "We offer a 48-hour turnaround for our standard packages once we have received your business information and assets." }
       ]
@@ -118,7 +118,7 @@ export const seoPagesData = {
         Affordable doesn't mean cheap. Our sites are built on the same high-performance architecture used by top brands. We use cutting-edge frameworks (like React and Tailwind) to ensure your site is fast, secure, and ready to compete in the national market.
 
         The Digital Divide in South Africa:
-        Many SA business owners think they can't afford a 'proper' website. They end up with slow, broken sites or just a Facebook page. This hurts their credibility. We solve this by offering professional sites with no upfront design costs. You only pay a R10 booking fee to see a preview of your site before committing to a R299/month subscription.
+        Many SA business owners think they can't afford a 'proper' website. They end up with slow, broken sites or just a Facebook page. This hurts their credibility. We solve this by offering professional sites with no upfront design costs. You only pay a R0 booking fee to see a preview of your site before committing to a R299/month subscription.
 
         We believe that when local businesses grow, the South African economy grows. Our goal is to be the partner that helps you take that first step online.`
       },

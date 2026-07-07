@@ -41,8 +41,8 @@ export const blogPosts: BlogPost[] = [
       
       <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
         <h3 className="text-white font-bold mb-4">Ready to get your business online?</h3>
-        <p className="text-zinc-400 mb-6">Don't wait until your competitors have taken all the leads. Reserve your build slot for R10 today.</p>
-        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
+        <p className="text-zinc-400 mb-6">Don't wait until your competitors have taken all the leads. Reserve your build slot for R0 today.</p>
+        <a href="https://wa.me/27645192556?text=Hi%2C%20I%20just%20read%20your%20blog%20post%20and%20want%20to%20start%20my%20free%20website%20build%21" target="_blank" rel="noopener noreferrer" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
         <h3 className="text-white font-bold mb-4">Want more customers?</h3>
         <p className="text-zinc-400 mb-6">Let's discuss a custom strategy to help your business dominate its local market.</p>
-        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
+        <a href="https://wa.me/27645192556?text=Hi%2C%20I%20want%20to%20know%20how%20to%20get%20more%20customers%20for%20my%20local%20business%21" target="_blank" rel="noopener noreferrer" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -103,14 +103,14 @@ export const blogPosts: BlogPost[] = [
       <p>We offer a monthly hosting and support model for R299. This is designed to take the technical headache away from you. For less than the cost of a tank of petrol, you get high-speed local hosting, SSL security, daily backups, and a team of experts you can call whenever you need help. This ensures your site stays healthy and effective long after the initial launch.</p>
 
       <h2>No Big Upfront Costs</h2>
-      <p>We know that cash flow is king for small businesses. That's why we've introduced our "Build Before You Pay" model. To reserve your development slot, you only pay a R10 booking fee. We then build your custom website preview first—if you love it, you keep it for a low R299/month subscription. We want to remove the barriers to entry so that every South African entrepreneur can have a professional digital presence. You don't need to save up for months to get started. You can launch your business online today.</p>
+      <p>We know that cash flow is king for small businesses. That's why we've introduced our "Build Before You Pay" model. To reserve your development slot, you only pay a R0 booking fee. We then build your custom website preview first—if you love it, you keep it for a low R299/month subscription. We want to remove the barriers to entry so that every South African entrepreneur can have a professional digital presence. You don't need to save up for months to get started. You can launch your business online today.</p>
 
       <h2>Conclusion</h2>
       <p>Affordability doesn't have to mean "cheap." It means getting the best possible value for your money. At Vibrant Web Solutions, we're proud to support the backbone of the South African economy—our small businesses—by providing world-class web design at prices that make sense. Ready to join the digital revolution?</p>
 
       <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
         <h3 className="text-white font-bold mb-4">Affordable. Fast. Professional.</h3>
-        <p className="text-zinc-400 mb-6">Reserve your build slot for just R10 and see your site before you pay. No hidden fees, just results.</p>
+        <p className="text-zinc-400 mb-6">Reserve your build slot for just R0 and see your site before you pay. No hidden fees, just results.</p>
         <a href="https://wa.me/27645192556" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
       <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
         <h3 className="text-white font-bold mb-4">Ready to chat with your customers?</h3>
         <p className="text-zinc-400 mb-6">Let's build a website that makes it easy for your customers to reach you instantly on WhatsApp.</p>
-        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
+        <a href="https://wa.me/27645192556?text=Hi%2C%20I%20want%20to%20integrate%20WhatsApp%20into%20my%20new%20website%20build%21" target="_blank" rel="noopener noreferrer" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   },
@@ -180,7 +180,7 @@ export const blogPosts: BlogPost[] = [
       <div className="bg-primary-dark p-8 rounded-2xl border border-medium-teal/10 my-8">
         <h3 className="text-white font-bold mb-4">Stop making these mistakes today.</h3>
         <p className="text-zinc-400 mb-6">Let's build a professional website that gives your business the credibility and visibility it needs to grow.</p>
-        <a href="/checkout" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
+        <a href="https://wa.me/27645192556?text=Hi%2C%20I%27m%20ready%20to%20get%20started%20with%20a%20professional%20website%20build%21" target="_blank" rel="noopener noreferrer" className="bg-medium-teal text-light-bg px-6 py-3 rounded-full font-bold inline-block hover:bg-accent-green hover:text-primary-dark transition-all">Start My Free Build</a>
       </div>
     `
   }

@@ -114,6 +114,73 @@ async function startServer() {
     }
   });
 
+  // API Reservation Route (Free Build Slot)
+  app.post("/api/reserve", async (req, res) => {
+    const { 
+      fullName, 
+      businessName, 
+      email, 
+      whatsappNumber, 
+      businessType, 
+      currentWebsite, 
+      aboutBusiness, 
+      websiteGoals 
+    } = req.body;
+
+    if (!fullName || !email) {
+      return res.status(400).json({ error: "Missing required fields (Full Name and Email are required)" });
+    }
+
+    try {
+      const transporter = nodemailer.createTransport({
+        host: "cp68.domains.co.za",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.SMTP_USER || "help@vibrantws.co.za",
+          pass: process.env.SMTP_PASS, 
+        },
+        tls: { rejectUnauthorized: false }
+      });
+
+      // Email to owner
+      await transporter.sendMail({
+        from: `"Vibrant Web Solutions" <${process.env.SMTP_USER || "help@vibrantws.co.za"}>`,
+        to: "help@vibrantws.co.za",
+        subject: `NEW WEBSITE BUILD INQUIRY: ${fullName}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff;">
+            <h2 style="color: #00cc99; margin-top: 0; font-size: 24px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">New Website Build Inquiry</h2>
+            <p style="font-size: 16px; color: #1e293b; margin: 15px 0;"><strong>Full Name:</strong> ${fullName}</p>
+            <p style="font-size: 16px; color: #1e293b; margin: 15px 0;"><strong>Email Address:</strong> ${email}</p>
+            <p style="font-size: 16px; color: #1e293b; margin: 15px 0;"><strong>WhatsApp Number:</strong> ${whatsappNumber || "Not provided"}</p>
+            <p style="font-size: 16px; color: #1e293b; margin: 15px 0;"><strong>Business Name:</strong> ${businessName || "Not provided"}</p>
+            <p style="font-size: 16px; color: #1e293b; margin: 15px 0;"><strong>Business Type:</strong> ${businessType || "Not provided"}</p>
+            <p style="font-size: 16px; color: #1e293b; margin: 15px 0;"><strong>Current Website:</strong> ${currentWebsite || "None"}</p>
+            
+            <div style="margin-top: 25px; padding: 20px; background-color: #f8fafc; border-radius: 8px; border-left: 4px solid #00cc99;">
+              <h3 style="margin-top: 0; color: #334155; font-size: 16px;">About the Business:</h3>
+              <p style="color: #475569; line-height: 1.6; font-size: 15px; white-space: pre-line; margin-bottom: 0;">${aboutBusiness || "Not provided"}</p>
+            </div>
+
+            <div style="margin-top: 25px; padding: 20px; background-color: #f8fafc; border-radius: 8px; border-left: 4px solid #3b82f6;">
+              <h3 style="margin-top: 0; color: #334155; font-size: 16px;">Website Goals:</h3>
+              <p style="color: #475569; line-height: 1.6; font-size: 15px; white-space: pre-line; margin-bottom: 0;">${websiteGoals || "Not provided"}</p>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+            <p style="font-size: 12px; color: #64748b; text-align: center; margin-bottom: 0;">This inquiry was submitted via the contact form on Vibrant Web Solutions.</p>
+          </div>
+        `,
+      });
+
+      res.status(200).json({ success: true });
+    } catch (error) {
+      console.error("Reservation SMTP Error:", error);
+      res.status(500).json({ error: "Failed to process reservation." });
+    }
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

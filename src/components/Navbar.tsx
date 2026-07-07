@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
-const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I'm%20interested%20in%20your%20website%20services.%20Can%20you%20help%20me%3F";
+const WHATSAPP_URL = getWhatsAppUrl('buildMyWebsite');
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +58,14 @@ const Navbar = () => {
               </a>
             ))}
 
-            <Link 
-              to="/checkout"
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-medium-teal text-light-bg border border-accent-green/20 px-8 h-[46px] flex items-center justify-center rounded-[10px] text-xs font-black uppercase tracking-widest hover:bg-dark-teal hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-md"
             >
               Start Free Build
-            </Link>
+            </a>
           </div>
 
           <div className="md:hidden">
@@ -92,13 +95,15 @@ const Navbar = () => {
               </a>
             ))}
             
-            <Link 
-              to="/checkout"
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="w-full mt-4 bg-medium-teal text-light-bg px-6 h-[50px] rounded-[10px] text-xs font-black uppercase tracking-widest text-center flex items-center justify-center cursor-pointer active:scale-95 transition-all"
             >
               Start Free Build
-            </Link>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

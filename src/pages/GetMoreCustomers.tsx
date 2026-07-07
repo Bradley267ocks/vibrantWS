@@ -5,8 +5,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
+import { getWhatsAppUrl } from '../utils/whatsapp';
+
 const GetMoreCustomers = () => {
-  const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%20want%20to%20know%20how%20to%20get%20more%20customers%21";
+  const WHATSAPP_URL = getWhatsAppUrl('getMoreCustomers');
 
   return (
     <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
@@ -25,12 +27,14 @@ const GetMoreCustomers = () => {
             <p className="text-xl text-primary-dark/70 leading-relaxed mb-10 font-medium">
               Stop waiting for the phone to ring. We build systems that proactively find and convert your ideal customers while you focus on your business.
             </p>
-            <Link 
-              to="/checkout"
-              className="inline-flex items-center gap-2 h-[50px] bg-medium-teal text-light-bg px-8 rounded-[8px] font-semibold uppercase tracking-widest text-[11px] hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-[50px] bg-medium-teal text-light-bg px-8 rounded-[8px] font-semibold uppercase tracking-widest text-[11px] hover:bg-dark-teal transition-all cursor-pointer shadow-lg animate-pulse"
             >
               Start Your Free Build <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
 
           <div className="prose prose-slate max-w-4xl mx-auto">
@@ -86,12 +90,14 @@ const GetMoreCustomers = () => {
                 Every business is different. Let's chat about your specific goals and how we can help you reach more customers in your area.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/checkout"
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-medium-teal text-light-bg px-8 h-[50px] flex items-center justify-center rounded-[8px] font-semibold uppercase tracking-widest text-[11px] text-center hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
                 >
                   Start My Free Build
-                </Link>
+                </a>
                 <Link 
                   to="/"
                   className="bg-transparent text-primary-dark border-2 border-primary-dark/20 px-8 h-[50px] flex items-center justify-center rounded-[8px] font-semibold uppercase tracking-widest text-[11px] text-center hover:bg-primary-dark/5 transition-all cursor-pointer"

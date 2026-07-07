@@ -6,6 +6,7 @@ import { Calendar, User, Tag, ArrowLeft, Share2, MessageCircle } from 'lucide-re
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { blogPosts } from '../blog/posts';
+import { getWhatsAppCustomUrl } from '../utils/whatsapp';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const BlogPost = () => {
     return <Navigate to="/blog" replace />;
   }
 
-  const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%20just%20read%20your%20blog%20post%20about%20" + encodeURIComponent(post.title);
+  const WHATSAPP_URL = getWhatsAppCustomUrl("Hi Vibrant Web Solutions. I just read your blog post about " + post.title);
 
   return (
     <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
@@ -86,17 +87,19 @@ const BlogPost = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10"
+                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10 animate-pulse"
               >
                 <MessageCircle size={20} />
                 Chat on WhatsApp
               </a>
-              <Link 
-                to="/get-started"
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto h-[50px] bg-transparent border-2 border-medium-teal text-medium-teal px-8 rounded-[10px] font-semibold hover:bg-medium-teal/5 transition-all flex items-center justify-center cursor-pointer"
               >
-                Get Started
-              </Link>
+                Start Free Build
+              </a>
             </div>
           </div>
         </div>

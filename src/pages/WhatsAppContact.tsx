@@ -4,9 +4,11 @@ import { MessageCircle, CheckCircle2, ArrowRight, Smartphone, Clock, Zap, Shield
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const WhatsAppContact = () => {
-  const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%27m%20contacting%20you%20from%20your%20website%20for%20a%20consultation%21";
+  const WHATSAPP_URL_CONTACT = getWhatsAppUrl('contactUs');
+  const WHATSAPP_URL_FREE_PREVIEW = getWhatsAppUrl('freePreview');
 
   return (
     <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
@@ -27,19 +29,21 @@ const WhatsAppContact = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
-                href={WHATSAPP_URL}
+                href={WHATSAPP_URL_CONTACT}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10"
+                className="w-full sm:w-auto h-[50px] bg-medium-teal text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10 animate-pulse"
               >
                 Chat on WhatsApp Now <ArrowRight size={20} />
               </a>
-              <Link 
-                to="/checkout"
+              <a 
+                href={WHATSAPP_URL_FREE_PREVIEW}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto h-[50px] bg-primary-dark text-light-bg px-8 rounded-[10px] font-semibold flex items-center justify-center gap-2 hover:bg-medium-teal transition-all cursor-pointer shadow-lg"
               >
                 Start Free Build
-              </Link>
+              </a>
             </div>
           </motion.div>
 
@@ -90,19 +94,21 @@ const WhatsAppContact = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href={WHATSAPP_URL}
+                  href={WHATSAPP_URL_CONTACT}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-medium-teal text-light-bg h-[50px] px-8 rounded-[10px] font-semibold text-center flex items-center justify-center hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10"
+                  className="bg-medium-teal text-light-bg h-[50px] px-8 rounded-[10px] font-semibold text-center flex items-center justify-center hover:bg-dark-teal transition-all cursor-pointer shadow-lg shadow-medium-teal/10 animate-pulse"
                 >
                   Message Us on WhatsApp
                 </a>
-                <Link 
-                  to="/checkout"
+                <a 
+                  href={WHATSAPP_URL_FREE_PREVIEW}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-primary-dark text-light-bg h-[50px] px-8 rounded-[10px] font-semibold text-center flex items-center justify-center hover:bg-medium-teal transition-all cursor-pointer shadow-lg"
                 >
                   Start My Free Build
-                </Link>
+                </a>
               </div>
             </div>
 

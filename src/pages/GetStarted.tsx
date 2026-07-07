@@ -5,8 +5,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
+import { getWhatsAppUrl } from '../utils/whatsapp';
+
 const GetStarted = () => {
-  const WHATSAPP_URL = "https://wa.me/27645192556?text=Hi%2C%20I%27m%20ready%20to%20get%20started%20with%20my%20new%20website%21";
+  const WHATSAPP_URL = getWhatsAppUrl('getStarted');
 
   return (
     <div className="min-h-screen bg-light-bg text-primary-dark font-sans selection:bg-medium-teal selection:text-light-bg">
@@ -25,12 +27,14 @@ const GetStarted = () => {
             <p className="text-xl text-primary-dark/70 leading-relaxed mb-10 font-medium">
               We've removed the risk of hiring a web designer. We build your authority website first, and you only pay if you love it.
             </p>
-            <Link 
-              to="/checkout"
-              className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg animate-pulse"
             >
-              Reserve My Build Slot for R10 <ArrowRight size={20} />
-            </Link>
+              Start My Free Build Preview <ArrowRight size={20} />
+            </a>
           </motion.div>
 
           <div className="prose prose-slate max-w-4xl mx-auto">
@@ -44,8 +48,8 @@ const GetStarted = () => {
               <div className="flex gap-6 p-8 rounded-3xl bg-white border border-medium-teal/10 shadow-xl">
                 <div className="shrink-0 w-12 h-12 bg-medium-teal/10 rounded-xl flex items-center justify-center text-medium-teal font-black text-xl">01</div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2 text-primary-dark">Reserve Your Slot (R10)</h4>
-                  <p className="text-primary-dark/60 font-medium mb-0">Secure your place in our build queue for free. We collect card details only to verify commitment and prevent spam, ensuring we focus on serious entrepreneurs.</p>
+                  <h4 className="text-xl font-bold mb-2 text-primary-dark">Request Your Preview</h4>
+                  <p className="text-primary-dark/60 font-medium mb-0">Tell us about your business and goals. We require no upfront payments, booking fees, or credit cards.</p>
                 </div>
               </div>
               <div className="flex gap-6 p-8 rounded-3xl bg-white border border-medium-teal/10 shadow-xl">
@@ -88,15 +92,17 @@ const GetStarted = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-medium-teal/10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
               <h4 className="text-3xl font-bold mb-4 relative z-10">Start Your No-Risk Build</h4>
               <p className="text-white/70 mb-8 font-medium relative z-10 max-w-xl">
-                We are currently accepting 3 new builds this week. Reserve your slot now to avoid waiting for the next opening.
+                We are currently accepting 3 new builds this week. Start your free website draft now completely risk-free.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 relative z-10">
-            <Link 
-              to="/checkout"
-              className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
-            >
-              Reserve Slot for R10
-            </Link>
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 h-[56px] bg-medium-teal text-light-bg px-10 rounded-xl font-bold hover:bg-dark-teal transition-all cursor-pointer shadow-lg"
+                >
+                  Start My Free Build
+                </a>
                 <Link 
                   to="/"
                   className="bg-white/10 text-white border-2 border-white/20 px-8 h-[56px] flex items-center justify-center rounded-xl font-bold text-center hover:bg-white/20 transition-all cursor-pointer"
